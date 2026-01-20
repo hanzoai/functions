@@ -1,148 +1,178 @@
-<p align="center">
-  <img src="https://fission.io/images/logo-gh.svg" width="300" />
-  <br>
-  <h1 align="center">Fission: Serverless Functions for Kubernetes</h1>
-</p>
+# Hanzo Functions
 
-<p align="center">
-  <a href="https://github.com/fission/fission/blob/main/LICENSE">
-    <img alt="Fission Licence" src="https://img.shields.io/github/license/fission/fission">
-  </a>
-  <a href="https://github.com/fission/fission/releases">
-    <img alt="Fission Releases" src="https://img.shields.io/github/release-pre/fission/fission.svg">
-  </a>
-  <a href="https://pkg.go.dev/github.com/fission/fission">
-    <img alt="go.dev reference" src="https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white">
-  </a>
-  <a href="https://goreportcard.com/report/github.com/fission/fission">
-    <img src="https://goreportcard.com/badge/github.com/fission/fission" alt="Go Report Card" />
-  </a>
-  <a href="https://github.com/fission/fission/graphs/contributors">
-    <img alt="Fission contributors" src="https://img.shields.io/github/contributors/fission/fission">
-  </a>
-  <a href="https://github.com/fission/fission/commits/main">
-    <img alt="Commit Activity" src="https://img.shields.io/github/commit-activity/m/fission/fission">
-  </a>
-  <br>
-  <a href="https://fission.io/">
-    <img alt="Fission website" src="https://img.shields.io/badge/website-fission.io-blue">
-  </a>
-  <a href="https://fission.io/slack">
-    <img alt="Fission slack" src="https://badgen.net/badge/slack/Fission?icon=slack">
-  </a>
-  <a href="https://twitter.com/fissionio">
-    <img alt="Fission twitter" src="https://img.shields.io/twitter/follow/fissionio?style=social">
-  </a>
-  <a href="https://github.com/fission/fission">
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/fission/fission?style=social">
-  </a>
-  <a href="https://scorecard.dev/viewer/?uri=github.com/fission/fission">
-    <image alt="OpenSSF Scorecard" src="https://api.scorecard.dev/projects/github.com/fission/fission/badge">
-  </a>
-  <a href="https://www.bestpractices.dev/projects/4986">
-    <img src="https://www.bestpractices.dev/projects/4986/badge">
-  </a>
-</p>
+Serverless compute platform for event-driven workloads with GPU support.
 
---------------
+## Overview
 
-Fission is an open-source, Kubernetes-native serverless framework that simplifies the deployment of functions and applications on Kubernetes. With Fission, developers can easily create and deploy serverless functions that can be triggered by a variety of events, such as HTTP requests, messages from a message queue, or scheduled tasks.
+Hanzo Functions is a high-performance serverless platform that enables you to deploy and run functions at scale. With support for multiple runtimes, automatic scaling, and GPU acceleration, it is ideal for AI/ML workloads and event-driven architectures.
 
-Fission provides a simple, easy-to-use interface for developers to create serverless functions in their language of choice, without having to worry about the underlying infrastructure. The framework also offers automatic scaling, so functions can scale up or down based on demand, without any additional configuration.
+## Features
 
-Fission operates on _just the code_: Docker and Kubernetes are
-abstracted away under normal operation, though you can use both to
-extend Fission if you want to.
+- **Auto-Scaling** - Scale from zero to thousands of instances automatically
+- **GPU Support** - Native NVIDIA GPU support for AI/ML workloads
+- **Multiple Runtimes** - Python, Go, Node.js, Rust, and custom containers
+- **Event Sources** - HTTP, Kafka, RabbitMQ, Cron, and custom triggers
+- **Cold Start Optimization** - Sub-100ms cold starts with prewarming
+- **Versioning** - Blue/green deployments and canary releases
+- **Observability** - Built-in metrics, logging, and tracing
 
-Fission is extensible to any language; the core is written in Go, and
-language-specific parts are isolated in something called
-_environments_ (more below).  Fission currently supports NodeJS, Python, Ruby, Go, 
-PHP, Bash, and any Linux executable, with more languages coming soon.
+## Quick Start
 
-Table of Contents
-=================
-- [Table of Contents](#table-of-contents)
-  - [Performance: 100msec cold start](#performance-100msec-cold-start)
-  - [Kubernetes is the right place for Serverless](#kubernetes-is-the-right-place-for-serverless)
-  - [Getting Started](#getting-started)
-  - [Learn More](#learn-more)
-  - [Contributing](#contributing)
-  - [Who is using Fission?](#who-is-using-fission)
-  - [Sponsors](#sponsors)
-- [License](#license)
-
-## Performance: 100msec cold start
-
-Fission maintains a pool of "warm" containers that each contain a
-small dynamic loader.  When a function is first called,
-i.e. "cold-started", a running container is chosen and the function is
-loaded.  This pool is what makes Fission fast: cold-start latencies
-are typically about 100msec.
-
-## Kubernetes is the right place for Serverless
-
-We're built on Kubernetes because we think any non-trivial app will
-use a combination of serverless functions and more conventional
-microservices, and Kubernetes is a great framework to bring these
-together seamlessly.
-
-Building on Kubernetes also means that anything you do for operations
-on your Kubernetes cluster &mdash; such as monitoring or log
-aggregation &mdash; also helps with ops on your Fission deployment.
-
-## Getting Started
+### Docker
 
 ```bash
-  # Add the stock NodeJS env to your Fission deployment
-  $ fission env create --name nodejs --image ghcr.io/fission/node-env
-
-  # Create a function with a javascript one-liner that prints "hello world"
-  $ fission function create --name hello --env nodejs --code https://raw.githubusercontent.com/fission/examples/master/nodejs/hello.js
-
-  # Run the function.  This takes about 100msec the first time.
-  $ fission function test --name hello
-  Hello, world!
+docker run -d --name hanzo-functions \
+  -p 8080:8080 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  hanzoai/functions:latest
 ```
 
-## Learn More
+### Docker Compose
 
-- Understand [Fission Concepts](https://fission.io/docs/concepts/).
-- See the [installation guide](https://fission.io/docs/installation/) for installing and running Fission.
-- You can learn more about Fission and get started from [Fission Docs](https://fission.io/docs).
-- To see Fission in action, check out the [Fission Examples Repo](https://github.com/fission/examples).
-- See the [troubleshooting guide](https://fission.io/docs/trouble-shooting/) for debugging your functions and Fission installation.
+```yaml
+version: '3.8'
+services:
+  functions:
+    image: hanzoai/functions:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - REGISTRY_URL=registry.local:5000
 
-## Contributing
+  registry:
+    image: registry:2
+    ports:
+      - "5000:5000"
+```
 
-Check out the [contributing guide](CONTRIBUTING.md).
+### Kubernetes (Helm)
 
-## Who is using Fission?
-- [Fareye](https://www.getfareye.com)
-- Apple
-- [iQuanti](https://www.iquanti.com)
-- A large telecom CSP
-- [Gadget](https://gadget.dev)
-- [CinnamonAI](https://cinnamon.is/en)
-- [Armo](https://www.armosec.io/)
-- [The Social Audience](https://thesocialaudience.com/)
-- [KubeML](https://github.com/DiegoStock12/kubeml)
-- Unilever
-- [BD](https://www.bd.com/en-in)
-- [Biofourmis](https://biofourmis.com/)
-- [Babylon](https://www.babylonhealth.com/en-gb)
+```bash
+helm repo add hanzo https://charts.hanzo.ai
+helm install functions hanzo/functions
+```
 
-## Sponsors
+## CLI Installation
 
-The following companies, organizations, and individuals support Fission's ongoing maintenance and development. If you are using/contributing to Fission, we would be happy to list you here, please raise a Pull request.
+```bash
+# macOS
+brew install hanzoai/tap/hanzo-fn
 
-<p>
-  <a href="https://infracloud.io/"><img src="https://fission.io/sponsors/infracloud.png" alt="InfraCloud" height="70"></a>
-  <a href="https://srcmesh.com/"><img src="https://fission.io/sponsors/srcmesh.png" alt="Srcmesh" height="70"></a>
-  <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=fissionio">
-    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="201px">
-  </a>
-</p>
+# Linux
+curl -sSL https://get.hanzo.ai/fn | bash
 
-# License
+# npm
+npm install -g @hanzo/fn
+```
 
-Fission is licensed under the Apache License 2.0 - see the [LICENSE](./LICENSE) file for details
+## Example Functions
+
+### Python
+
+```python
+# handler.py
+def handler(context, event):
+    name = event.body.get("name", "World")
+    return {
+        "statusCode": 200,
+        "body": f"Hello, {name}!"
+    }
+```
+
+```bash
+hanzo-fn deploy hello --runtime python:3.11 --handler handler.py
+```
+
+### Go
+
+```go
+// handler.go
+package main
+
+import "github.com/hanzoai/functions-go"
+
+func Handler(ctx *functions.Context, event functions.Event) interface{} {
+    return map[string]interface{}{
+        "statusCode": 200,
+        "body":       "Hello from Go!",
+    }
+}
+```
+
+### Node.js
+
+```javascript
+// handler.js
+exports.handler = async (context, event) => {
+    return {
+        statusCode: 200,
+        body: JSON.stringify({ message: "Hello from Node.js!" })
+    };
+};
+```
+
+### GPU Function (AI/ML)
+
+```python
+# inference.py
+import torch
+from transformers import pipeline
+
+model = pipeline("text-generation", model="gpt2", device=0)
+
+def handler(context, event):
+    prompt = event.body.get("prompt", "Hello")
+    result = model(prompt, max_length=100)
+    return {"statusCode": 200, "body": result}
+```
+
+```bash
+hanzo-fn deploy inference \
+  --runtime python:3.11-cuda \
+  --gpu 1 \
+  --handler inference.py
+```
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                     Hanzo Functions                      │
+│                                                          │
+│  ┌──────────┐   ┌──────────┐   ┌──────────────────────┐ │
+│  │ Gateway  │──▶│ Executor │──▶│ Function Containers  │ │
+│  └──────────┘   └──────────┘   │  ┌────┐ ┌────┐      │ │
+│       │                        │  │ Fn │ │ Fn │ ...  │ │
+│       │         ┌──────────┐   │  └────┘ └────┘      │ │
+│       └────────▶│ Scaler   │   └──────────────────────┘ │
+│                 └──────────┘                             │
+│                      │                                   │
+│              ┌───────┴───────┐                          │
+│              │   Registry    │                          │
+│              └───────────────┘                          │
+└─────────────────────────────────────────────────────────┘
+```
+
+## Supported Runtimes
+
+| Runtime | Versions | GPU Support |
+|---------|----------|-------------|
+| Python | 3.9, 3.10, 3.11, 3.12 | Yes |
+| Go | 1.20, 1.21, 1.22 | Yes |
+| Node.js | 18, 20, 22 | No |
+| Rust | 1.75+ | Yes |
+| Custom | Any Docker image | Yes |
+
+## Documentation
+
+- [Getting Started](https://docs.hanzo.ai/functions/getting-started)
+- [Runtimes](https://docs.hanzo.ai/functions/runtimes)
+- [GPU Functions](https://docs.hanzo.ai/functions/gpu)
+- [Event Sources](https://docs.hanzo.ai/functions/events)
+- [Deployment](https://docs.hanzo.ai/functions/deployment)
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
