@@ -322,3 +322,12 @@ tool (
 	sigs.k8s.io/controller-runtime/tools/setup-envtest
 	sigs.k8s.io/controller-tools/cmd/controller-gen
 )
+
+// Hanzo usage metering -> commerce (github.com/hanzoai/commerce/metering).
+// metering is a standalone, stdlib-only module (its own go.mod, go 1.24, zero
+// deps), so importing it adds no commerce server code or version churn here.
+// Pinned to the local checkout until hanzoai/commerce#41 merges + tags the
+// metering module; switch to a tagged version on merge.
+require github.com/hanzoai/commerce/metering v0.0.0-00010101000000-000000000000
+
+replace github.com/hanzoai/commerce/metering => ../commerce/metering
