@@ -53,6 +53,7 @@ import (
 	"github.com/fission/fission/pkg/crd"
 	eclient "github.com/fission/fission/pkg/executor/client"
 	"github.com/fission/fission/pkg/throttler"
+	"github.com/fission/fission/pkg/usagemeter"
 	"github.com/fission/fission/pkg/utils/httpserver"
 	"github.com/fission/fission/pkg/utils/manager"
 	"github.com/fission/fission/pkg/utils/metrics"
@@ -67,6 +68,10 @@ func router(ctx context.Context, logger *zap.Logger, mgr manager.Interface, http
 	var mr *mutableRouter
 	mux := mux.NewRouter()
 	mux.Use(metrics.HTTPMetricMiddleware)
+	// Meter function invocations to Hanzo commerce (balance gate + usage
+	// record). Env-gated: a transparent pass-through until COMMERCE_URL +
+	// COMMERCE_SERVICE_TOKEN are configured by the operator.
+	mux.Use(usagemeter.Middleware(logger))
 
 	// see issue https://github.com/fission/fission/issues/1317
 	useEncodedPath, err := strconv.ParseBool(os.Getenv("USE_ENCODED_PATH"))
