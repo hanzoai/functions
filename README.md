@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="functions" width="880"></p>
+
 # Hanzo Functions
 
 Serverless compute platform for event-driven workloads with GPU support.
