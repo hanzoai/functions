@@ -24,7 +24,7 @@ jobs:
       actions: read  # for github/codeql-action/init to get workflow details
       contents: read  # for actions/checkout to fetch code
       security-events: write  # for github/codeql-action/analyze to upload SARIF results
-    runs-on: ubuntu-24.04
+    runs-on: hanzo-build-linux-amd64
     if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip-ci') }}
     steps:
       - name: Harden Runner
