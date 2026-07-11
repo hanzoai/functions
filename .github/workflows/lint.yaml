@@ -32,7 +32,7 @@ jobs:
     permissions:
       contents: read  # for actions/checkout to fetch code
       pull-requests: read  # for golangci/golangci-lint-action to fetch pull requests
-    runs-on: ubuntu-24.04
+    runs-on: hanzo-build-linux-amd64
     # if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip-ci') }}
     steps:
       - name: Harden Runner
