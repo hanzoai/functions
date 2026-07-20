@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.17.1
-  name: canaryconfigs.fission.io
+  name: canaryconfigs.hanzo.ai
 spec:
-  group: fission.io
+  group: hanzo.ai
   names:
     kind: CanaryConfig
     listKind: CanaryConfigList

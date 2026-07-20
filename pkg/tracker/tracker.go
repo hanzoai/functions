@@ -25,7 +25,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/fission/fission/pkg/utils/uuid"
+	"github.com/hanzoai/functions/pkg/utils/uuid"
 )
 
 const (

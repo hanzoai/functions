@@ -27,8 +27,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 	"sigs.k8s.io/controller-runtime/pkg/webhook/admission"
 
-	v1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
+	v1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
 )
 
 type Environment struct{}
@@ -44,7 +44,7 @@ func (r *Environment) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-// Admission webhooks can be added by adding tag: kubebuilder:webhook:path=/mutate-fission-io-v1-environment,mutating=true,failurePolicy=fail,sideEffects=None,groups=fission.io,resources=environments,verbs=create;update,versions=v1,name=menvironment.fission.io,admissionReviewVersions=v1
+// Admission webhooks can be added by adding tag: kubebuilder:webhook:path=/mutate-fission-io-v1-environment,mutating=true,failurePolicy=fail,sideEffects=None,groups=hanzo.ai,resources=environments,verbs=create;update,versions=v1,name=menvironment.hanzo.ai,admissionReviewVersions=v1
 
 var _ webhook.CustomDefaulter = &Environment{}
 
@@ -54,7 +54,7 @@ func (r *Environment) Default(_ context.Context, obj runtime.Object) error {
 }
 
 // user: change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-//+kubebuilder:webhook:path=/validate-fission-io-v1-environment,mutating=false,failurePolicy=fail,sideEffects=None,groups=fission.io,resources=environments,verbs=create,versions=v1,name=venvironment.fission.io,admissionReviewVersions=v1
+//+kubebuilder:webhook:path=/validate-fission-io-v1-environment,mutating=false,failurePolicy=fail,sideEffects=None,groups=hanzo.ai,resources=environments,verbs=create,versions=v1,name=venvironment.hanzo.ai,admissionReviewVersions=v1
 
 var _ webhook.CustomValidator = &Environment{}
 

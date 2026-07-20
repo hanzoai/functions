@@ -24,10 +24,10 @@ import (
 	"go.uber.org/zap"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/generated/clientset/versioned"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/generated/clientset/versioned"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 type ArchivePruner struct {

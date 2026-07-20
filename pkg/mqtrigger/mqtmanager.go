@@ -29,13 +29,13 @@ import (
 	k8sCache "k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/util/workqueue"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/generated/clientset/versioned"
-	genInformer "github.com/fission/fission/pkg/generated/informers/externalversions"
-	flisterv1 "github.com/fission/fission/pkg/generated/listers/core/v1"
-	"github.com/fission/fission/pkg/mqtrigger/messageQueue"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/metrics"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/generated/clientset/versioned"
+	genInformer "github.com/hanzoai/functions/pkg/generated/informers/externalversions"
+	flisterv1 "github.com/hanzoai/functions/pkg/generated/listers/core/v1"
+	"github.com/hanzoai/functions/pkg/mqtrigger/messageQueue"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/metrics"
 )
 
 const (

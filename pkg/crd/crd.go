@@ -29,14 +29,14 @@ import (
 // EnsureFissionCRDs checks if all Fission CRDs are present
 func EnsureFissionCRDs(ctx context.Context, logger *zap.Logger, clientset apiextensionsclient.Interface) error {
 	crdsExpected := []string{
-		"canaryconfigs.fission.io",
-		"environments.fission.io",
-		"functions.fission.io",
-		"httptriggers.fission.io",
-		"kuberneteswatchtriggers.fission.io",
-		"messagequeuetriggers.fission.io",
-		"packages.fission.io",
-		"timetriggers.fission.io",
+		"canaryconfigs.hanzo.ai",
+		"environments.hanzo.ai",
+		"functions.hanzo.ai",
+		"httptriggers.hanzo.ai",
+		"kuberneteswatchtriggers.hanzo.ai",
+		"messagequeuetriggers.hanzo.ai",
+		"packages.hanzo.ai",
+		"timetriggers.hanzo.ai",
 	}
 	errs := &multierror.Error{}
 	for _, crdName := range crdsExpected {

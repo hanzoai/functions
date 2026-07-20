@@ -8,8 +8,8 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes/fake"
 
-	"github.com/fission/fission/pkg/utils/loggerfactory"
-	"github.com/fission/fission/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 func TestServiceAccountCheck(t *testing.T) {

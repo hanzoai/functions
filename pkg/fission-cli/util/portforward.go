@@ -31,9 +31,9 @@ import (
 	"k8s.io/client-go/tools/portforward"
 	"k8s.io/client-go/transport/spdy"
 
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	"github.com/fission/fission/pkg/fission-cli/console"
-	"github.com/fission/fission/pkg/utils"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/pkg/fission-cli/console"
+	"github.com/hanzoai/functions/pkg/utils"
 )
 
 const maxDuration time.Duration = 2000

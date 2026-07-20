@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.17.1
-  name: functions.fission.io
+  name: functions.hanzo.ai
 spec:
-  group: fission.io
+  group: hanzo.ai
   names:
     kind: Function
     listKind: FunctionList

@@ -23,7 +23,7 @@ import (
 	"reflect"
 	"testing"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 )
 
 func TestIsURL(t *testing.T) {

@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.17.1
-  name: httptriggers.fission.io
+  name: httptriggers.hanzo.ai
 spec:
-  group: fission.io
+  group: hanzo.ai
   names:
     kind: HTTPTrigger
     listKind: HTTPTriggerList

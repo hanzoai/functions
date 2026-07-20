@@ -4,7 +4,7 @@ kind: ArchiveUploadSpec
 name: functions-deploy-archive
 
 ---
-apiVersion: fission.io/v1
+apiVersion: hanzo.ai/v1
 kind: Package
 metadata:
   creationTimestamp: null

@@ -23,7 +23,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/fission/fission/pkg/router/util"
+	"github.com/hanzoai/functions/pkg/router/util"
 )
 
 type ResponseWriterWrapper struct {

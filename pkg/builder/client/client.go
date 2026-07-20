@@ -30,9 +30,9 @@ import (
 	"go.uber.org/zap"
 	"golang.org/x/net/context/ctxhttp"
 
-	"github.com/fission/fission/pkg/builder"
-	ferror "github.com/fission/fission/pkg/error"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	"github.com/hanzoai/functions/pkg/builder"
+	ferror "github.com/hanzoai/functions/pkg/error"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 type (

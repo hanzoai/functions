@@ -30,10 +30,10 @@ import (
 	"github.com/IBM/sarama"
 	"go.uber.org/zap"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/mqtrigger/factory"
-	"github.com/fission/fission/pkg/mqtrigger/messageQueue"
-	"github.com/fission/fission/pkg/mqtrigger/validator"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/mqtrigger/factory"
+	"github.com/hanzoai/functions/pkg/mqtrigger/messageQueue"
+	"github.com/hanzoai/functions/pkg/mqtrigger/validator"
 )
 
 func init() {

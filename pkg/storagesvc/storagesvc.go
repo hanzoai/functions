@@ -31,11 +31,11 @@ import (
 	"github.com/graymeta/stow"
 	"go.uber.org/zap"
 
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/utils/httpserver"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/metrics"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/utils/httpserver"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/metrics"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 type (

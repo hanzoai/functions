@@ -27,9 +27,9 @@ import (
 	"k8s.io/apimachinery/pkg/api/resource"
 	"k8s.io/apimachinery/pkg/types"
 
-	"github.com/fission/fission/pkg/crd"
-	ferror "github.com/fission/fission/pkg/error"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	"github.com/hanzoai/functions/pkg/crd"
+	ferror "github.com/hanzoai/functions/pkg/error"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 type requestType int

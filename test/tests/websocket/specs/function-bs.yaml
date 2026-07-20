@@ -4,7 +4,7 @@ kind: ArchiveUploadSpec
 name: broadcast-js-LHtQ
 
 ---
-apiVersion: fission.io/v1
+apiVersion: hanzo.ai/v1
 kind: Package
 metadata:
   creationTimestamp: null
@@ -25,7 +25,7 @@ status:
   lastUpdateTimestamp: "2021-04-07T10:13:22Z"
 
 ---
-apiVersion: fission.io/v1
+apiVersion: hanzo.ai/v1
 kind: Function
 metadata:
   creationTimestamp: null

@@ -30,15 +30,15 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	k8sCache "k8s.io/client-go/tools/cache"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	pkgutil "github.com/fission/fission/pkg/fission-cli/cmd/package/util"
-	spectypes "github.com/fission/fission/pkg/fission-cli/cmd/spec/types"
-	"github.com/fission/fission/pkg/fission-cli/console"
-	flagkey "github.com/fission/fission/pkg/fission-cli/flag/key"
-	"github.com/fission/fission/pkg/fission-cli/util"
-	"github.com/fission/fission/pkg/utils"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	pkgutil "github.com/hanzoai/functions/pkg/fission-cli/cmd/package/util"
+	spectypes "github.com/hanzoai/functions/pkg/fission-cli/cmd/spec/types"
+	"github.com/hanzoai/functions/pkg/fission-cli/console"
+	flagkey "github.com/hanzoai/functions/pkg/fission-cli/flag/key"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
+	"github.com/hanzoai/functions/pkg/utils"
 )
 
 type ApplySubCommand struct {

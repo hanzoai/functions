@@ -44,15 +44,15 @@ import (
 	"k8s.io/client-go/util/workqueue"
 	metricsclient "k8s.io/metrics/pkg/client/clientset/versioned"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/executor/fscache"
-	fetcherClient "github.com/fission/fission/pkg/fetcher/client"
-	fetcherConfig "github.com/fission/fission/pkg/fetcher/config"
-	"github.com/fission/fission/pkg/generated/clientset/versioned"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/maps"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/executor/fscache"
+	fetcherClient "github.com/hanzoai/functions/pkg/fetcher/client"
+	fetcherConfig "github.com/hanzoai/functions/pkg/fetcher/config"
+	"github.com/hanzoai/functions/pkg/generated/clientset/versioned"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/maps"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 type (

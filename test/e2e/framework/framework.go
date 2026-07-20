@@ -15,9 +15,9 @@ import (
 	"k8s.io/client-go/rest"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"
 
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
 )
 
 type ServiceInfo struct {
