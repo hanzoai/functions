@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	corev1 "github.com/fission/fission/pkg/apis/core/v1"
+	corev1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
 	listers "k8s.io/client-go/listers"
 	cache "k8s.io/client-go/tools/cache"

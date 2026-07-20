@@ -27,8 +27,8 @@ import (
 	"k8s.io/apimachinery/pkg/util/uuid"
 	"k8s.io/client-go/kubernetes/fake"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
 )
 
 func TestConvertTargetCPUToCustomMetric(t *testing.T) {

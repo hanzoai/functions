@@ -9,8 +9,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/fission/fission/pkg/utils/loggerfactory"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 func TestPublisher(t *testing.T) {

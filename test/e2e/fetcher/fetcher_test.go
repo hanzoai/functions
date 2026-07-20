@@ -12,11 +12,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/fission/fission/cmd/fetcher/app"
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/fetcher"
-	"github.com/fission/fission/pkg/fetcher/client"
-	storageClient "github.com/fission/fission/pkg/storagesvc/client"
+	"github.com/hanzoai/functions/cmd/fetcher/app"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/fetcher"
+	"github.com/hanzoai/functions/pkg/fetcher/client"
+	storageClient "github.com/hanzoai/functions/pkg/storagesvc/client"
 
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
@@ -26,15 +26,15 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/fission/fission/pkg/generated/clientset/versioned"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/httpserver"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/profile"
-	"github.com/fission/fission/test/e2e/framework"
-	"github.com/fission/fission/test/e2e/framework/cli"
-	"github.com/fission/fission/test/e2e/framework/services"
+	"github.com/hanzoai/functions/pkg/generated/clientset/versioned"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/httpserver"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/profile"
+	"github.com/hanzoai/functions/test/e2e/framework"
+	"github.com/hanzoai/functions/test/e2e/framework/cli"
+	"github.com/hanzoai/functions/test/e2e/framework/services"
 )
 
 const testFileData = `

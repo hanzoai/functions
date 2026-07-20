@@ -3,7 +3,7 @@ package function
 import (
 	"testing"
 
-	"github.com/fission/fission/pkg/utils/uuid"
+	"github.com/hanzoai/functions/pkg/utils/uuid"
 )
 
 func TestGeneratePackageName(t *testing.T) {

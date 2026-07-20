@@ -19,9 +19,9 @@ limitations under the License.
 package applyconfiguration
 
 import (
-	v1 "github.com/fission/fission/pkg/apis/core/v1"
-	corev1 "github.com/fission/fission/pkg/generated/applyconfiguration/core/v1"
-	internal "github.com/fission/fission/pkg/generated/applyconfiguration/internal"
+	v1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	corev1 "github.com/hanzoai/functions/pkg/generated/applyconfiguration/core/v1"
+	internal "github.com/hanzoai/functions/pkg/generated/applyconfiguration/internal"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	testing "k8s.io/client-go/testing"
@@ -31,7 +31,7 @@ import (
 // apply configuration type exists for the given GroupVersionKind.
 func ForKind(kind schema.GroupVersionKind) interface{} {
 	switch kind {
-	// Group=fission.io, Version=v1
+	// Group=hanzo.ai, Version=v1
 	case v1.SchemeGroupVersion.WithKind("Archive"):
 		return &corev1.ArchiveApplyConfiguration{}
 	case v1.SchemeGroupVersion.WithKind("Builder"):

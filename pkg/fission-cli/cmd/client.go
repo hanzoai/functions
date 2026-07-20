@@ -28,9 +28,9 @@ import (
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/fission-cli/console"
-	"github.com/fission/fission/pkg/generated/clientset/versioned"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/fission-cli/console"
+	"github.com/hanzoai/functions/pkg/generated/clientset/versioned"
 )
 
 type (

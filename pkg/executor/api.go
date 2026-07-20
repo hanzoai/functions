@@ -29,14 +29,14 @@ import (
 	"github.com/gorilla/mux"
 	"go.uber.org/zap"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	ferror "github.com/fission/fission/pkg/error"
-	"github.com/fission/fission/pkg/executor/client"
-	"github.com/fission/fission/pkg/executor/fscache"
-	"github.com/fission/fission/pkg/utils/httpserver"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/metrics"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	ferror "github.com/hanzoai/functions/pkg/error"
+	"github.com/hanzoai/functions/pkg/executor/client"
+	"github.com/hanzoai/functions/pkg/executor/fscache"
+	"github.com/hanzoai/functions/pkg/utils/httpserver"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/metrics"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 func (executor *Executor) getServiceForFunctionAPI(w http.ResponseWriter, r *http.Request) {

@@ -27,13 +27,13 @@ import (
 	k8sCache "k8s.io/client-go/tools/cache"
 	metricsclient "k8s.io/metrics/pkg/client/clientset/versioned/fake"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	fetcherConfig "github.com/fission/fission/pkg/fetcher/config"
-	fClient "github.com/fission/fission/pkg/generated/clientset/versioned/fake"
-	genInformer "github.com/fission/fission/pkg/generated/informers/externalversions"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
-	"github.com/fission/fission/pkg/utils/manager"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	fetcherConfig "github.com/hanzoai/functions/pkg/fetcher/config"
+	fClient "github.com/hanzoai/functions/pkg/generated/clientset/versioned/fake"
+	genInformer "github.com/hanzoai/functions/pkg/generated/informers/externalversions"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 func TestPoolPodControllerPodCleanup(t *testing.T) {
