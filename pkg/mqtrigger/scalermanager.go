@@ -20,11 +20,11 @@ import (
 	kedav1alpha1 "github.com/kedacore/keda/v2/apis/keda/v1alpha1"
 	kedaClient "github.com/kedacore/keda/v2/pkg/generated/clientset/versioned"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/executor/util"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/manager"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/executor/util"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 var (
@@ -348,7 +348,7 @@ func getAuthTriggerSpec(ctx context.Context, mqt *fv1.MessageQueueTrigger, authe
 			OwnerReferences: []metav1.OwnerReference{
 				{
 					Kind:               "MessageQueueTrigger",
-					APIVersion:         "fission.io/v1",
+					APIVersion:         "hanzo.ai/v1",
 					Name:               mqt.ObjectMeta.Name,
 					UID:                mqt.ObjectMeta.UID,
 					BlockOwnerDeletion: &blockOwnerDeletion,
@@ -436,7 +436,7 @@ func getDeploymentSpec(ctx context.Context, mqt *fv1.MessageQueueTrigger, router
 			OwnerReferences: []metav1.OwnerReference{
 				{
 					Kind:               "MessageQueueTrigger",
-					APIVersion:         "fission.io/v1",
+					APIVersion:         "hanzo.ai/v1",
 					Name:               mqt.ObjectMeta.Name,
 					UID:                mqt.ObjectMeta.UID,
 					BlockOwnerDeletion: &blockOwnerDeletion,
@@ -505,7 +505,7 @@ func getScaledObject(mqt *fv1.MessageQueueTrigger, authenticationRef string) *ke
 			OwnerReferences: []metav1.OwnerReference{
 				{
 					Kind:               "MessageQueueTrigger",
-					APIVersion:         "fission.io/v1",
+					APIVersion:         "hanzo.ai/v1",
 					Name:               mqt.ObjectMeta.Name,
 					UID:                mqt.ObjectMeta.UID,
 					BlockOwnerDeletion: &blockOwnerDeletion,

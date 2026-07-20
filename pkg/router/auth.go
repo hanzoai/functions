@@ -13,8 +13,8 @@ import (
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/gorilla/mux"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	config "github.com/fission/fission/pkg/featureconfig"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	config "github.com/hanzoai/functions/pkg/featureconfig"
 )
 
 var (

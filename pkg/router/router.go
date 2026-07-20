@@ -50,14 +50,14 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.uber.org/zap"
 
-	"github.com/fission/fission/pkg/crd"
-	eclient "github.com/fission/fission/pkg/executor/client"
-	"github.com/fission/fission/pkg/throttler"
-	"github.com/fission/fission/pkg/usagemeter"
-	"github.com/fission/fission/pkg/utils/httpserver"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/metrics"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	"github.com/hanzoai/functions/pkg/crd"
+	eclient "github.com/hanzoai/functions/pkg/executor/client"
+	"github.com/hanzoai/functions/pkg/throttler"
+	"github.com/hanzoai/functions/pkg/usagemeter"
+	"github.com/hanzoai/functions/pkg/utils/httpserver"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/metrics"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 // request url ---[mux]---> Function(name,uid) ----[fmap]----> k8s service url
@@ -73,7 +73,7 @@ func router(ctx context.Context, logger *zap.Logger, mgr manager.Interface, http
 	// COMMERCE_SERVICE_TOKEN are configured by the operator.
 	mux.Use(usagemeter.Middleware(logger))
 
-	// see issue https://github.com/fission/fission/issues/1317
+	// see issue https://github.com/hanzoai/functions/issues/1317
 	useEncodedPath, err := strconv.ParseBool(os.Getenv("USE_ENCODED_PATH"))
 	if err != nil {
 		return nil, err

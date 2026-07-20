@@ -29,10 +29,10 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/generated/clientset/versioned"
-	"github.com/fission/fission/pkg/utils"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/generated/clientset/versioned"
+	"github.com/hanzoai/functions/pkg/utils"
 )
 
 type (
@@ -46,8 +46,8 @@ type (
 
 const (
 	maxRetries  = 5
-	FunctionCRD = "functions.fission.io"
-	MqtCRD      = "messagequeuetriggers.fission.io"
+	FunctionCRD = "functions.hanzo.ai"
+	MqtCRD      = "messagequeuetriggers.hanzo.ai"
 )
 
 func makePreUpgradeTaskClient(clientGen crd.ClientGeneratorInterface, logger *zap.Logger) (*PreUpgradeTaskClient, error) {

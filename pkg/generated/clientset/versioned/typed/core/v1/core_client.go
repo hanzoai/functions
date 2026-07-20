@@ -21,8 +21,8 @@ package v1
 import (
 	http "net/http"
 
-	corev1 "github.com/fission/fission/pkg/apis/core/v1"
-	scheme "github.com/fission/fission/pkg/generated/clientset/versioned/scheme"
+	corev1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	scheme "github.com/hanzoai/functions/pkg/generated/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
@@ -38,7 +38,7 @@ type CoreV1Interface interface {
 	TimeTriggersGetter
 }
 
-// CoreV1Client is used to interact with features provided by the fission.io group.
+// CoreV1Client is used to interact with features provided by the hanzo.ai group.
 type CoreV1Client struct {
 	restClient rest.Interface
 }

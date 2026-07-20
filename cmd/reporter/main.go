@@ -19,8 +19,8 @@ package main
 import (
 	"go.uber.org/zap"
 
-	"github.com/fission/fission/cmd/reporter/app"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/cmd/reporter/app"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
 )
 
 func main() {

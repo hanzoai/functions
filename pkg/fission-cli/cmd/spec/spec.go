@@ -29,21 +29,21 @@ import (
 	k8sCache "k8s.io/client-go/tools/cache"
 	"sigs.k8s.io/yaml"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	executorUtil "github.com/fission/fission/pkg/executor/util"
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	"github.com/fission/fission/pkg/fission-cli/cmd/spec/types"
-	"github.com/fission/fission/pkg/fission-cli/console"
-	"github.com/fission/fission/pkg/fission-cli/util"
-	"github.com/fission/fission/pkg/utils"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	executorUtil "github.com/hanzoai/functions/pkg/executor/util"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/spec/types"
+	"github.com/hanzoai/functions/pkg/fission-cli/console"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
+	"github.com/hanzoai/functions/pkg/utils"
 )
 
 const (
 	FISSION_DEPLOYMENT_NAME_KEY = "fission-name"
 	FISSION_DEPLOYMENT_UID_KEY  = "fission-uid"
 
-	SPEC_API_VERSION          = "fission.io/v1"
+	SPEC_API_VERSION          = "hanzo.ai/v1"
 	ARCHIVE_URL_PREFIX string = "archive://"
 	SPEC_README               = `
 Fission Specs

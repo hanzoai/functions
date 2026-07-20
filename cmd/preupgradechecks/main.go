@@ -20,8 +20,8 @@ import (
 	"go.uber.org/zap"
 	"sigs.k8s.io/controller-runtime/pkg/manager/signals"
 
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
 )
 
 func main() {

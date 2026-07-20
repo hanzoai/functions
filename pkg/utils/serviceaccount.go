@@ -17,7 +17,7 @@ import (
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/kubernetes"
 
-	"github.com/fission/fission/pkg/utils/uuid"
+	"github.com/hanzoai/functions/pkg/utils/uuid"
 )
 
 const (
@@ -63,7 +63,7 @@ var (
 				verb: "get",
 			},
 			{
-				gvr:  &schema.GroupVersionResource{Group: "fission.io", Version: "v1", Resource: "packages"},
+				gvr:  &schema.GroupVersionResource{Group: "hanzo.ai", Version: "v1", Resource: "packages"},
 				verb: "get",
 			},
 			{
@@ -84,7 +84,7 @@ var (
 				verb: "get",
 			},
 			{
-				gvr:  &schema.GroupVersionResource{Group: "fission.io", Version: "v1", Resource: "packages"},
+				gvr:  &schema.GroupVersionResource{Group: "hanzo.ai", Version: "v1", Resource: "packages"},
 				verb: "get",
 			},
 		},
