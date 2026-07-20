@@ -29,12 +29,12 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/cache"
-	"github.com/fission/fission/pkg/crd"
-	ferror "github.com/fission/fission/pkg/error"
-	"github.com/fission/fission/pkg/executor/metrics"
-	"github.com/fission/fission/pkg/executor/util"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/cache"
+	"github.com/hanzoai/functions/pkg/crd"
+	ferror "github.com/hanzoai/functions/pkg/error"
+	"github.com/hanzoai/functions/pkg/executor/metrics"
+	"github.com/hanzoai/functions/pkg/executor/util"
 )
 
 type fscRequestType int

@@ -1,4 +1,4 @@
-apiVersion: fission.io/v1
+apiVersion: hanzo.ai/v1
 kind: Function
 metadata:
   creationTimestamp: null

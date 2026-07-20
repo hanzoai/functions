@@ -33,13 +33,13 @@ import (
 	"go.opentelemetry.io/otel"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	"github.com/fission/fission/pkg/fission-cli/cmd/httptrigger"
-	"github.com/fission/fission/pkg/fission-cli/console"
-	flagkey "github.com/fission/fission/pkg/fission-cli/flag/key"
-	"github.com/fission/fission/pkg/fission-cli/util"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/httptrigger"
+	"github.com/hanzoai/functions/pkg/fission-cli/console"
+	flagkey "github.com/hanzoai/functions/pkg/fission-cli/flag/key"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 type TestSubCommand struct {

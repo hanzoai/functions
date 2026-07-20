@@ -23,12 +23,12 @@ import (
 
 	"sigs.k8s.io/yaml"
 
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	spectypes "github.com/fission/fission/pkg/fission-cli/cmd/spec/types"
-	flagkey "github.com/fission/fission/pkg/fission-cli/flag/key"
-	"github.com/fission/fission/pkg/fission-cli/util"
-	"github.com/fission/fission/pkg/utils/uuid"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	spectypes "github.com/hanzoai/functions/pkg/fission-cli/cmd/spec/types"
+	flagkey "github.com/hanzoai/functions/pkg/fission-cli/flag/key"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
+	"github.com/hanzoai/functions/pkg/utils/uuid"
 )
 
 type InitSubCommand struct {

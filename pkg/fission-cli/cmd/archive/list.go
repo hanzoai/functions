@@ -19,10 +19,10 @@ package archive
 import (
 	"fmt"
 
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	"github.com/fission/fission/pkg/fission-cli/util"
-	storagesvcClient "github.com/fission/fission/pkg/storagesvc/client"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
+	storagesvcClient "github.com/hanzoai/functions/pkg/storagesvc/client"
 )
 
 type ListSubCommand struct {
