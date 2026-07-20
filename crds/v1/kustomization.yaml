@@ -1,13 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 commonLabels:
-  group: fission.io
+  group: hanzo.ai
 resources:
-  - fission.io_canaryconfigs.yaml
-  - fission.io_environments.yaml
-  - fission.io_functions.yaml
-  - fission.io_httptriggers.yaml
-  - fission.io_kuberneteswatchtriggers.yaml
-  - fission.io_messagequeuetriggers.yaml
-  - fission.io_packages.yaml
-  - fission.io_timetriggers.yaml
+  - hanzo.ai_canaryconfigs.yaml
+  - hanzo.ai_environments.yaml
+  - hanzo.ai_functions.yaml
+  - hanzo.ai_httptriggers.yaml
+  - hanzo.ai_kuberneteswatchtriggers.yaml
+  - hanzo.ai_messagequeuetriggers.yaml
+  - hanzo.ai_packages.yaml
+  - hanzo.ai_timetriggers.yaml

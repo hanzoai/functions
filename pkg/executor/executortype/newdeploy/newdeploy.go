@@ -33,9 +33,9 @@ import (
 	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/client-go/kubernetes"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/executor/util"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/executor/util"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 func (deploy *NewDeploy) createOrGetDeployment(ctx context.Context, fn *fv1.Function, env *fv1.Environment,
@@ -250,7 +250,7 @@ func (deploy *NewDeploy) getDeploymentSpec(ctx context.Context, fn *fv1.Function
 	if deploy.enableOwnerReferences {
 		ownerReferences = []metav1.OwnerReference{
 			*metav1.NewControllerRef(fn, schema.GroupVersionKind{
-				Group:   "fission.io",
+				Group:   "hanzo.ai",
 				Version: "v1",
 				Kind:    "Function",
 			}),
@@ -353,7 +353,7 @@ func (deploy *NewDeploy) createOrGetSvc(ctx context.Context, fn *fv1.Function, d
 	if deploy.enableOwnerReferences {
 		ownerReferences = []metav1.OwnerReference{
 			*metav1.NewControllerRef(fn, schema.GroupVersionKind{
-				Group:   "fission.io",
+				Group:   "hanzo.ai",
 				Version: "v1",
 				Kind:    "Function",
 			}),

@@ -11,11 +11,11 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
 
-	v1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/test/e2e/framework"
-	"github.com/fission/fission/test/e2e/framework/cli"
-	"github.com/fission/fission/test/e2e/framework/services"
+	v1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/test/e2e/framework"
+	"github.com/hanzoai/functions/test/e2e/framework/cli"
+	"github.com/hanzoai/functions/test/e2e/framework/services"
 )
 
 func TestFissionCLI(t *testing.T) {

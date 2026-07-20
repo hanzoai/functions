@@ -19,12 +19,12 @@ package main
 import (
 	"sigs.k8s.io/controller-runtime/pkg/manager/signals"
 
-	"github.com/fission/fission/cmd/fetcher/app"
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/profile"
+	"github.com/hanzoai/functions/cmd/fetcher/app"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/profile"
 )
 
 const fetcherPort = "8000"

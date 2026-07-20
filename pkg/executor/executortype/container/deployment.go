@@ -30,9 +30,9 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/intstr"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/executor/util"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/executor/util"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 func (cn *Container) createOrGetDeployment(ctx context.Context, fn *fv1.Function, deployName string, deployLabels map[string]string, deployAnnotations map[string]string, deployNamespace string) (*appsv1.Deployment, error) {
@@ -269,7 +269,7 @@ func (cn *Container) getDeploymentSpec(ctx context.Context, fn *fv1.Function, ta
 	if cn.enableOwnerReferences {
 		ownerReferences = []metav1.OwnerReference{
 			*metav1.NewControllerRef(fn, schema.GroupVersionKind{
-				Group:   "fission.io",
+				Group:   "hanzo.ai",
 				Version: "v1",
 				Kind:    "Function",
 			}),

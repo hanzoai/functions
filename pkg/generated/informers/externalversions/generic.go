@@ -21,7 +21,7 @@ package externalversions
 import (
 	fmt "fmt"
 
-	v1 "github.com/fission/fission/pkg/apis/core/v1"
+	v1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
 	cache "k8s.io/client-go/tools/cache"
 )
@@ -52,7 +52,7 @@ func (f *genericInformer) Lister() cache.GenericLister {
 // TODO extend this to unknown resources with a client pool
 func (f *sharedInformerFactory) ForResource(resource schema.GroupVersionResource) (GenericInformer, error) {
 	switch resource {
-	// Group=fission.io, Version=v1
+	// Group=hanzo.ai, Version=v1
 	case v1.SchemeGroupVersion.WithResource("canaryconfigs"):
 		return &genericInformer{resource: resource.GroupResource(), informer: f.Core().V1().CanaryConfigs().Informer()}, nil
 	case v1.SchemeGroupVersion.WithResource("environments"):
