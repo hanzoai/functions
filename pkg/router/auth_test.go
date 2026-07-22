@@ -14,12 +14,12 @@ import (
 	"github.com/gorilla/mux"
 	"k8s.io/apimachinery/pkg/util/wait"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	config "github.com/fission/fission/pkg/featureconfig"
-	"github.com/fission/fission/pkg/utils/httpserver"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/metrics"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	config "github.com/hanzoai/functions/pkg/featureconfig"
+	"github.com/hanzoai/functions/pkg/utils/httpserver"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/metrics"
 )
 
 func setup(tb testing.TB) func(tb testing.TB) {

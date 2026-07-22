@@ -19,7 +19,7 @@ limitations under the License.
 package v1
 
 import (
-	corev1 "github.com/fission/fission/pkg/apis/core/v1"
+	corev1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 )
 
 // ArchiveApplyConfiguration represents a declarative configuration of the Archive type for use

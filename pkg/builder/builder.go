@@ -33,9 +33,9 @@ import (
 	"github.com/dchest/uniuri"
 	"go.uber.org/zap"
 
-	"github.com/fission/fission/pkg/info"
-	"github.com/fission/fission/pkg/utils"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	"github.com/hanzoai/functions/pkg/info"
+	"github.com/hanzoai/functions/pkg/utils"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 const (

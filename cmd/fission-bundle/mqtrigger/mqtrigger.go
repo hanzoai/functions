@@ -26,15 +26,15 @@ import (
 
 	"go.uber.org/zap"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/crd"
-	genInformer "github.com/fission/fission/pkg/generated/informers/externalversions"
-	"github.com/fission/fission/pkg/mqtrigger"
-	"github.com/fission/fission/pkg/mqtrigger/factory"
-	"github.com/fission/fission/pkg/mqtrigger/messageQueue"
-	_ "github.com/fission/fission/pkg/mqtrigger/messageQueue/kafka"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/manager"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/crd"
+	genInformer "github.com/hanzoai/functions/pkg/generated/informers/externalversions"
+	"github.com/hanzoai/functions/pkg/mqtrigger"
+	"github.com/hanzoai/functions/pkg/mqtrigger/factory"
+	"github.com/hanzoai/functions/pkg/mqtrigger/messageQueue"
+	_ "github.com/hanzoai/functions/pkg/mqtrigger/messageQueue/kafka"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 func Start(ctx context.Context, clientGen crd.ClientGeneratorInterface, logger *zap.Logger, mgr manager.Interface, routerUrl string) error {

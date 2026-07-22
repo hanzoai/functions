@@ -34,13 +34,13 @@ import (
 	"k8s.io/client-go/kubernetes"
 	k8sCache "k8s.io/client-go/tools/cache"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/executor/util"
-	fetcherConfig "github.com/fission/fission/pkg/fetcher/config"
-	"github.com/fission/fission/pkg/generated/clientset/versioned"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/manager"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/executor/util"
+	fetcherConfig "github.com/hanzoai/functions/pkg/fetcher/config"
+	"github.com/hanzoai/functions/pkg/generated/clientset/versioned"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 const (
@@ -331,7 +331,7 @@ func (envw *environmentWatcher) createBuilderService(ctx context.Context, env *f
 	if envw.enableOwnerReferences {
 		ownerReferences = []metav1.OwnerReference{
 			*metav1.NewControllerRef(env, schema.GroupVersionKind{
-				Group:   "fission.io",
+				Group:   "hanzo.ai",
 				Version: "v1",
 				Kind:    "Environment",
 			}),
@@ -453,7 +453,7 @@ func (envw *environmentWatcher) createBuilderDeployment(ctx context.Context, env
 	if envw.enableOwnerReferences {
 		ownerReferences = []metav1.OwnerReference{
 			*metav1.NewControllerRef(env, schema.GroupVersionKind{
-				Group:   "fission.io",
+				Group:   "hanzo.ai",
 				Version: "v1",
 				Kind:    "Environment",
 			}),

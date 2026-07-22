@@ -40,7 +40,7 @@ func Package(name, namespace string) *PackageApplyConfiguration {
 	b.WithName(name)
 	b.WithNamespace(namespace)
 	b.WithKind("Package")
-	b.WithAPIVersion("fission.io/v1")
+	b.WithAPIVersion("hanzo.ai/v1")
 	return b
 }
 

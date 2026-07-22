@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 	"sigs.k8s.io/controller-runtime/pkg/webhook/admission"
 
-	v1 "github.com/fission/fission/pkg/apis/core/v1"
+	v1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 )
 
 type CanaryConfig struct{}
@@ -37,7 +37,7 @@ func (r *CanaryConfig) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-// Admission webhooks can be added by adding tag: kubebuilder:webhook:path=/mutate-fission-io-v1-canaryconfig,mutating=true,failurePolicy=fail,sideEffects=None,groups=fission.io,resources=canaryconfigs,verbs=create;update,versions=v1,name=mcanaryconfig.fission.io,admissionReviewVersions=v1
+// Admission webhooks can be added by adding tag: kubebuilder:webhook:path=/mutate-fission-io-v1-canaryconfig,mutating=true,failurePolicy=fail,sideEffects=None,groups=hanzo.ai,resources=canaryconfigs,verbs=create;update,versions=v1,name=mcanaryconfig.hanzo.ai,admissionReviewVersions=v1
 // Refer Makefile -> generate-webhooks to generate config for manifests
 
 var _ webhook.CustomDefaulter = &CanaryConfig{}
@@ -48,7 +48,7 @@ func (r *CanaryConfig) Default(_ context.Context, obj runtime.Object) error {
 }
 
 // user can change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-// Validation webhooks can be added by adding tag: kubebuilder:webhook:path=/validate-fission-io-v1-canaryconfig,mutating=false,failurePolicy=fail,sideEffects=None,groups=fission.io,resources=canaryconfigs,verbs=create;update,versions=v1,name=vcanaryconfig.fission.io,admissionReviewVersions=v1
+// Validation webhooks can be added by adding tag: kubebuilder:webhook:path=/validate-fission-io-v1-canaryconfig,mutating=false,failurePolicy=fail,sideEffects=None,groups=hanzo.ai,resources=canaryconfigs,verbs=create;update,versions=v1,name=vcanaryconfig.hanzo.ai,admissionReviewVersions=v1
 
 var _ webhook.CustomValidator = &CanaryConfig{}
 

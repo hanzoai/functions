@@ -30,16 +30,16 @@ import (
 	"k8s.io/client-go/kubernetes"
 	k8sCache "k8s.io/client-go/tools/cache"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	ferror "github.com/fission/fission/pkg/error"
-	eclient "github.com/fission/fission/pkg/executor/client"
-	config "github.com/fission/fission/pkg/featureconfig"
-	"github.com/fission/fission/pkg/generated/clientset/versioned"
-	"github.com/fission/fission/pkg/info"
-	"github.com/fission/fission/pkg/throttler"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/metrics"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	ferror "github.com/hanzoai/functions/pkg/error"
+	eclient "github.com/hanzoai/functions/pkg/executor/client"
+	config "github.com/hanzoai/functions/pkg/featureconfig"
+	"github.com/hanzoai/functions/pkg/generated/clientset/versioned"
+	"github.com/hanzoai/functions/pkg/info"
+	"github.com/hanzoai/functions/pkg/throttler"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/metrics"
 )
 
 // HTTPTriggerSet represents an HTTP trigger set

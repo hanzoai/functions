@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"time"
 
-	ferror "github.com/fission/fission/pkg/error"
+	ferror "github.com/hanzoai/functions/pkg/error"
 )
 
 type requestType int
