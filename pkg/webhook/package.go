@@ -28,9 +28,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/webhook"
 	"sigs.k8s.io/controller-runtime/pkg/webhook/admission"
 
-	v1 "github.com/fission/fission/pkg/apis/core/v1"
-	ferror "github.com/fission/fission/pkg/error"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
+	v1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	ferror "github.com/hanzoai/functions/pkg/error"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
 )
 
 type Package struct{}
@@ -46,7 +46,7 @@ func (r *Package) SetupWebhookWithManager(mgr ctrl.Manager) error {
 		Complete()
 }
 
-//+kubebuilder:webhook:path=/mutate-fission-io-v1-package,mutating=true,failurePolicy=fail,sideEffects=None,groups=fission.io,resources=packages,verbs=create;update,versions=v1,name=mpackage.fission.io,admissionReviewVersions=v1
+//+kubebuilder:webhook:path=/mutate-fission-io-v1-package,mutating=true,failurePolicy=fail,sideEffects=None,groups=hanzo.ai,resources=packages,verbs=create;update,versions=v1,name=mpackage.hanzo.ai,admissionReviewVersions=v1
 
 var _ webhook.CustomDefaulter = &Package{}
 
@@ -73,7 +73,7 @@ func (r *Package) Default(_ context.Context, obj runtime.Object) error {
 }
 
 // user change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-//+kubebuilder:webhook:path=/validate-fission-io-v1-package,mutating=false,failurePolicy=fail,sideEffects=None,groups=fission.io,resources=packages,verbs=create;update,versions=v1,name=vpackage.fission.io,admissionReviewVersions=v1
+//+kubebuilder:webhook:path=/validate-fission-io-v1-package,mutating=false,failurePolicy=fail,sideEffects=None,groups=hanzo.ai,resources=packages,verbs=create;update,versions=v1,name=vpackage.hanzo.ai,admissionReviewVersions=v1
 
 var _ webhook.CustomValidator = &Package{}
 

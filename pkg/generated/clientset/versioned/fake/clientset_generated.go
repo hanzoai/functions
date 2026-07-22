@@ -19,10 +19,10 @@ limitations under the License.
 package fake
 
 import (
-	applyconfiguration "github.com/fission/fission/pkg/generated/applyconfiguration"
-	clientset "github.com/fission/fission/pkg/generated/clientset/versioned"
-	corev1 "github.com/fission/fission/pkg/generated/clientset/versioned/typed/core/v1"
-	fakecorev1 "github.com/fission/fission/pkg/generated/clientset/versioned/typed/core/v1/fake"
+	applyconfiguration "github.com/hanzoai/functions/pkg/generated/applyconfiguration"
+	clientset "github.com/hanzoai/functions/pkg/generated/clientset/versioned"
+	corev1 "github.com/hanzoai/functions/pkg/generated/clientset/versioned/typed/core/v1"
+	fakecorev1 "github.com/hanzoai/functions/pkg/generated/clientset/versioned/typed/core/v1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

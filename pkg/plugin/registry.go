@@ -18,7 +18,7 @@ package plugin
 
 // builtinRegistry consists of a map of plugin names along with the relevant url.
 var builtinRegistry = map[string]string{
-	"workflows": "https://github.com/fission/fission-workflows/releases",
+	"workflows": "https://github.com/hanzoai/functions-workflows/releases",
 }
 
 // SearchRegistries will search (remote) registries for the presence of the command.

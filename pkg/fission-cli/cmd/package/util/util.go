@@ -26,12 +26,12 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	"github.com/fission/fission/pkg/fission-cli/util"
-	storageSvcClient "github.com/fission/fission/pkg/storagesvc/client"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/uuid"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
+	storageSvcClient "github.com/hanzoai/functions/pkg/storagesvc/client"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/uuid"
 )
 
 func UploadArchiveFile(ctx context.Context, client cmd.Client, fileName string) (*fv1.Archive, error) {

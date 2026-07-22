@@ -6,7 +6,7 @@ import (
 	"github.com/graymeta/stow"
 	_ "github.com/graymeta/stow/local"
 
-	"github.com/fission/fission/pkg/utils/uuid"
+	"github.com/hanzoai/functions/pkg/utils/uuid"
 )
 
 type localStorage struct {

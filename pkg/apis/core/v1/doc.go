@@ -19,11 +19,11 @@ limitations under the License.
 
 // +k8s:deepcopy-gen=package
 // +k8s:defaulter-gen=TypeMeta
-// +groupName=fission.io
+// +groupName=hanzo.ai
 // +groupGoName=core
 package v1
 
 const (
-	CRD_VERSION          = "fission.io/v1"
+	CRD_VERSION          = "hanzo.ai/v1"
 	CRD_NAME_ENVIRONMENT = "Environment"
 )

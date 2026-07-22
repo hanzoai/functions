@@ -33,7 +33,7 @@ import (
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 	"golang.org/x/net/context/ctxhttp"
 
-	"github.com/fission/fission/pkg/storagesvc"
+	"github.com/hanzoai/functions/pkg/storagesvc"
 )
 
 type (

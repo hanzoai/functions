@@ -19,7 +19,7 @@ package plugin
 import (
 	"github.com/spf13/cobra"
 
-	wrapper "github.com/fission/fission/pkg/fission-cli/cliwrapper/driver/cobra"
+	wrapper "github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/driver/cobra"
 )
 
 func Commands() *cobra.Command {

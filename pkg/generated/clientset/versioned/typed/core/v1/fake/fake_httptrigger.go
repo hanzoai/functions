@@ -19,9 +19,9 @@ limitations under the License.
 package fake
 
 import (
-	v1 "github.com/fission/fission/pkg/apis/core/v1"
-	corev1 "github.com/fission/fission/pkg/generated/applyconfiguration/core/v1"
-	typedcorev1 "github.com/fission/fission/pkg/generated/clientset/versioned/typed/core/v1"
+	v1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	corev1 "github.com/hanzoai/functions/pkg/generated/applyconfiguration/core/v1"
+	typedcorev1 "github.com/hanzoai/functions/pkg/generated/clientset/versioned/typed/core/v1"
 	gentype "k8s.io/client-go/gentype"
 )
 

@@ -22,9 +22,9 @@ import (
 
 	"go.uber.org/zap"
 
-	builder "github.com/fission/fission/pkg/builder"
-	"github.com/fission/fission/pkg/utils/httpserver"
-	"github.com/fission/fission/pkg/utils/manager"
+	builder "github.com/hanzoai/functions/pkg/builder"
+	"github.com/hanzoai/functions/pkg/utils/httpserver"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 // Usage: builder <shared volume path>

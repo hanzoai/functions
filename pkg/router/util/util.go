@@ -23,7 +23,7 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 )
 
 func GetIngressSpec(namespace string, trigger *fv1.HTTPTrigger) *v1.Ingress {

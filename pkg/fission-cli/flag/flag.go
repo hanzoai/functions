@@ -21,9 +21,9 @@ import (
 	"net/http"
 	"time"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	flagkey "github.com/fission/fission/pkg/fission-cli/flag/key"
-	"github.com/fission/fission/pkg/fission-cli/util"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	flagkey "github.com/hanzoai/functions/pkg/fission-cli/flag/key"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
 )
 
 type (

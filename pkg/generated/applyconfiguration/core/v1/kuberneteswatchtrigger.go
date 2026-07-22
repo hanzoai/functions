@@ -39,7 +39,7 @@ func KubernetesWatchTrigger(name, namespace string) *KubernetesWatchTriggerApply
 	b.WithName(name)
 	b.WithNamespace(namespace)
 	b.WithKind("KubernetesWatchTrigger")
-	b.WithAPIVersion("fission.io/v1")
+	b.WithAPIVersion("hanzo.ai/v1")
 	return b
 }
 

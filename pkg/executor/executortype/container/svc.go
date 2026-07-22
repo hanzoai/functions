@@ -27,8 +27,8 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 	"k8s.io/apimachinery/pkg/util/intstr"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 func (cn *Container) getSvPort(fn *fv1.Function) (port int32, err error) {
@@ -54,7 +54,7 @@ func (cn *Container) createOrGetSvc(ctx context.Context, fn *fv1.Function, deplo
 	if cn.enableOwnerReferences {
 		ownerReferences = []metav1.OwnerReference{
 			*metav1.NewControllerRef(fn, schema.GroupVersionKind{
-				Group:   "fission.io",
+				Group:   "hanzo.ai",
 				Version: "v1",
 				Kind:    "Function",
 			}),

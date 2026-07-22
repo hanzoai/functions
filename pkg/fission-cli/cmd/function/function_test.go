@@ -23,10 +23,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	asv2 "k8s.io/api/autoscaling/v2"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/executor/util/hpa"
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/driver/dummy"
-	flagkey "github.com/fission/fission/pkg/fission-cli/flag/key"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/executor/util/hpa"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/driver/dummy"
+	flagkey "github.com/hanzoai/functions/pkg/fission-cli/flag/key"
 )
 
 func TestGetInvokeStrategy(t *testing.T) {
