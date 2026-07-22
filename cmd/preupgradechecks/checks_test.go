@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/fission/fission/test/e2e/framework"
+	"github.com/hanzoai/functions/test/e2e/framework"
 )
 
 func TestPreUpgradeTaskClient(t *testing.T) {

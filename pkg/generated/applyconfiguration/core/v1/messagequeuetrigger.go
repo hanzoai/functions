@@ -39,7 +39,7 @@ func MessageQueueTrigger(name, namespace string) *MessageQueueTriggerApplyConfig
 	b.WithName(name)
 	b.WithNamespace(namespace)
 	b.WithKind("MessageQueueTrigger")
-	b.WithAPIVersion("fission.io/v1")
+	b.WithAPIVersion("hanzo.ai/v1")
 	return b
 }
 

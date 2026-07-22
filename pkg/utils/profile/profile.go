@@ -31,8 +31,8 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/fission/fission/pkg/utils/httpserver"
-	"github.com/fission/fission/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/httpserver"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 func ProfileIfEnabled(ctx context.Context, logger *zap.Logger, mgr manager.Interface) {

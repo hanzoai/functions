@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.17.1
-  name: packages.fission.io
+  name: packages.hanzo.ai
 spec:
-  group: fission.io
+  group: hanzo.ai
   names:
     kind: Package
     listKind: PackageList

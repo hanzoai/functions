@@ -35,14 +35,14 @@ import (
 	"go.uber.org/zap"
 	k8stypes "k8s.io/apimachinery/pkg/types"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/crd"
-	ferror "github.com/fission/fission/pkg/error"
-	"github.com/fission/fission/pkg/error/network"
-	eclient "github.com/fission/fission/pkg/executor/client"
-	"github.com/fission/fission/pkg/throttler"
-	"github.com/fission/fission/pkg/utils"
-	otelUtils "github.com/fission/fission/pkg/utils/otel"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/crd"
+	ferror "github.com/hanzoai/functions/pkg/error"
+	"github.com/hanzoai/functions/pkg/error/network"
+	eclient "github.com/hanzoai/functions/pkg/executor/client"
+	"github.com/hanzoai/functions/pkg/throttler"
+	"github.com/hanzoai/functions/pkg/utils"
+	otelUtils "github.com/hanzoai/functions/pkg/utils/otel"
 )
 
 const (
@@ -400,7 +400,7 @@ func (roundTripper RetryingRoundTripper) getDefaultTransport() *http.Transport {
 		TLSHandshakeTimeout:   10 * time.Second,
 		ExpectContinueTimeout: 1 * time.Second,
 		// Default disables caching, Please refer to issue and specifically comment:
-		// https://github.com/fission/fission/issues/723#issuecomment-398781995
+		// https://github.com/hanzoai/functions/issues/723#issuecomment-398781995
 		// You can change it by setting environment variable "ROUTER_ROUND_TRIP_DISABLE_KEEP_ALIVE"
 		// of router or helm variable "disableKeepAlive" before installation to false.
 		DisableKeepAlives: roundTripper.funcHandler.tsRoundTripperParams.disableKeepAlive,

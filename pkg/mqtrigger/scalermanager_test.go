@@ -14,7 +14,7 @@ import (
 
 	kedav1alpha1 "github.com/kedacore/keda/v2/apis/keda/v1alpha1"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 )
 
 func Test_toEnvVar(t *testing.T) {
@@ -444,7 +444,7 @@ func Test_getAuthTriggerSpec(t *testing.T) {
 			OwnerReferences: []metav1.OwnerReference{
 				{
 					Kind:               "MessageQueueTrigger",
-					APIVersion:         "fission.io/v1",
+					APIVersion:         "hanzo.ai/v1",
 					Name:               mqt1.ObjectMeta.Name,
 					UID:                mqt1.ObjectMeta.UID,
 					BlockOwnerDeletion: &blockOwnerDeletion,

@@ -31,10 +31,10 @@ webhooks:
       namespace:  {{ .Release.Namespace }}
       path: /mutate-fission-io-v1-package
   failurePolicy: Fail
-  name: mpackage.fission.io
+  name: mpackage.hanzo.ai
   rules:
   - apiGroups:
-    - fission.io
+    - hanzo.ai
     apiVersions:
     - v1
     operations:
@@ -64,10 +64,10 @@ webhooks:
       namespace:  {{ .Release.Namespace }}
       path: /validate-fission-io-v1-environment
   failurePolicy: Fail
-  name: venvironment.fission.io
+  name: venvironment.hanzo.ai
   rules:
   - apiGroups:
-    - fission.io
+    - hanzo.ai
     apiVersions:
     - v1
     operations:
@@ -84,10 +84,10 @@ webhooks:
       namespace:  {{ .Release.Namespace }}
       path: /validate-fission-io-v1-function
   failurePolicy: Fail
-  name: vfunction.fission.io
+  name: vfunction.hanzo.ai
   rules:
   - apiGroups:
-    - fission.io
+    - hanzo.ai
     apiVersions:
     - v1
     operations:
@@ -105,10 +105,10 @@ webhooks:
       namespace:  {{ .Release.Namespace }}
       path: /validate-fission-io-v1-httptrigger
   failurePolicy: Fail
-  name: vhttptrigger.fission.io
+  name: vhttptrigger.hanzo.ai
   rules:
   - apiGroups:
-    - fission.io
+    - hanzo.ai
     apiVersions:
     - v1
     operations:
@@ -126,10 +126,10 @@ webhooks:
       namespace:  {{ .Release.Namespace }}
       path: /validate-fission-io-v1-kuberneteswatchtrigger
   failurePolicy: Fail
-  name: vkuberneteswatchtrigger.fission.io
+  name: vkuberneteswatchtrigger.hanzo.ai
   rules:
   - apiGroups:
-    - fission.io
+    - hanzo.ai
     apiVersions:
     - v1
     operations:
@@ -147,10 +147,10 @@ webhooks:
       namespace:  {{ .Release.Namespace }}
       path: /validate-fission-io-v1-messagequeuetrigger
   failurePolicy: Fail
-  name: vmessagequeuetrigger.fission.io
+  name: vmessagequeuetrigger.hanzo.ai
   rules:
   - apiGroups:
-    - fission.io
+    - hanzo.ai
     apiVersions:
     - v1
     operations:
@@ -168,10 +168,10 @@ webhooks:
       namespace:  {{ .Release.Namespace }}
       path: /validate-fission-io-v1-package
   failurePolicy: Fail
-  name: vpackage.fission.io
+  name: vpackage.hanzo.ai
   rules:
   - apiGroups:
-    - fission.io
+    - hanzo.ai
     apiVersions:
     - v1
     operations:
@@ -189,10 +189,10 @@ webhooks:
       namespace:  {{ .Release.Namespace }}
       path: /validate-fission-io-v1-timetrigger
   failurePolicy: Fail
-  name: vtimetrigger.fission.io
+  name: vtimetrigger.hanzo.ai
   rules:
   - apiGroups:
-    - fission.io
+    - hanzo.ai
     apiVersions:
     - v1
     operations:

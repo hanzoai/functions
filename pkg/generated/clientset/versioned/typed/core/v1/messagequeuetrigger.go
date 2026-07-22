@@ -21,9 +21,9 @@ package v1
 import (
 	context "context"
 
-	corev1 "github.com/fission/fission/pkg/apis/core/v1"
-	applyconfigurationcorev1 "github.com/fission/fission/pkg/generated/applyconfiguration/core/v1"
-	scheme "github.com/fission/fission/pkg/generated/clientset/versioned/scheme"
+	corev1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	applyconfigurationcorev1 "github.com/hanzoai/functions/pkg/generated/applyconfiguration/core/v1"
+	scheme "github.com/hanzoai/functions/pkg/generated/clientset/versioned/scheme"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
 	watch "k8s.io/apimachinery/pkg/watch"

@@ -23,11 +23,11 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	fClient "github.com/fission/fission/pkg/generated/clientset/versioned/fake"
-	genInformer "github.com/fission/fission/pkg/generated/informers/externalversions"
-	"github.com/fission/fission/pkg/mqtrigger/messageQueue"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	fClient "github.com/hanzoai/functions/pkg/generated/clientset/versioned/fake"
+	genInformer "github.com/hanzoai/functions/pkg/generated/informers/externalversions"
+	"github.com/hanzoai/functions/pkg/mqtrigger/messageQueue"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
 )
 
 const (

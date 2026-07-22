@@ -26,10 +26,10 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 
-	wCli "github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/driver/cobra/helptemplate"
-	cmd "github.com/fission/fission/pkg/fission-cli/cmd"
-	"github.com/fission/fission/pkg/fission-cli/flag"
+	wCli "github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/driver/cobra/helptemplate"
+	cmd "github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/pkg/fission-cli/flag"
 )
 
 var _ wCli.Input = &Cli{}

@@ -10,7 +10,7 @@ import (
 
 	apiv1 "k8s.io/api/core/v1"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 )
 
 /*
