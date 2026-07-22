@@ -18,34 +18,34 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
-	wrapper "github.com/fission/fission/pkg/fission-cli/cliwrapper/driver/cobra"
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/driver/cobra/helptemplate"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	"github.com/fission/fission/pkg/fission-cli/cmd/archive"
-	"github.com/fission/fission/pkg/fission-cli/cmd/canaryconfig"
-	"github.com/fission/fission/pkg/fission-cli/cmd/check"
-	"github.com/fission/fission/pkg/fission-cli/cmd/environment"
-	"github.com/fission/fission/pkg/fission-cli/cmd/function"
-	"github.com/fission/fission/pkg/fission-cli/cmd/httptrigger"
-	"github.com/fission/fission/pkg/fission-cli/cmd/kubewatch"
-	"github.com/fission/fission/pkg/fission-cli/cmd/mqtrigger"
-	_package "github.com/fission/fission/pkg/fission-cli/cmd/package"
-	"github.com/fission/fission/pkg/fission-cli/cmd/spec"
-	"github.com/fission/fission/pkg/fission-cli/cmd/support"
-	"github.com/fission/fission/pkg/fission-cli/cmd/timetrigger"
-	"github.com/fission/fission/pkg/fission-cli/cmd/token"
-	"github.com/fission/fission/pkg/fission-cli/cmd/version"
-	"github.com/fission/fission/pkg/fission-cli/console"
-	"github.com/fission/fission/pkg/fission-cli/flag"
-	flagkey "github.com/fission/fission/pkg/fission-cli/flag/key"
-	_ "github.com/fission/fission/pkg/mqtrigger/messageQueue/kafka"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
+	wrapper "github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/driver/cobra"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/driver/cobra/helptemplate"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/archive"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/canaryconfig"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/check"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/environment"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/function"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/httptrigger"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/kubewatch"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/mqtrigger"
+	_package "github.com/hanzoai/functions/pkg/fission-cli/cmd/package"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/spec"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/support"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/timetrigger"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/token"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd/version"
+	"github.com/hanzoai/functions/pkg/fission-cli/console"
+	"github.com/hanzoai/functions/pkg/fission-cli/flag"
+	flagkey "github.com/hanzoai/functions/pkg/fission-cli/flag/key"
+	_ "github.com/hanzoai/functions/pkg/mqtrigger/messageQueue/kafka"
 )
 
 const (
 	usage = `Fission: Fast and Simple Serverless Functions for Kubernetes
 
- * GitHub: https://github.com/fission/fission
+ * GitHub: https://github.com/hanzoai/functions
  * Documentation: https://fission.io/docs
 `
 )

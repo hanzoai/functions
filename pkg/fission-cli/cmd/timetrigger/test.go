@@ -21,10 +21,10 @@ import (
 
 	"errors"
 
-	"github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	flagkey "github.com/fission/fission/pkg/fission-cli/flag/key"
-	"github.com/fission/fission/pkg/fission-cli/util"
+	"github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	flagkey "github.com/hanzoai/functions/pkg/fission-cli/flag/key"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
 )
 
 type ShowSubCommand struct {

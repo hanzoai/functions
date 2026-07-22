@@ -30,8 +30,8 @@ import (
 
 	influxdbClient "github.com/influxdata/influxdb/client/v2"
 
-	ferror "github.com/fission/fission/pkg/error"
-	"github.com/fission/fission/pkg/fission-cli/util"
+	ferror "github.com/hanzoai/functions/pkg/error"
+	"github.com/hanzoai/functions/pkg/fission-cli/util"
 )
 
 const (

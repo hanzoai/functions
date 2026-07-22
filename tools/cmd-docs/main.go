@@ -10,8 +10,8 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/cobra/doc"
 
-	"github.com/fission/fission/cmd/fission-cli/app"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/cmd/fission-cli/app"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
 )
 
 const fmTemplate = `---

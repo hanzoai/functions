@@ -1,4 +1,4 @@
-module github.com/fission/fission
+module github.com/hanzoai/functions
 
 go 1.24.3
 

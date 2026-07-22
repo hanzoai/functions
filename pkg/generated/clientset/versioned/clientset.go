@@ -22,7 +22,7 @@ import (
 	fmt "fmt"
 	http "net/http"
 
-	corev1 "github.com/fission/fission/pkg/generated/clientset/versioned/typed/core/v1"
+	corev1 "github.com/hanzoai/functions/pkg/generated/clientset/versioned/typed/core/v1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

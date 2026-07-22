@@ -22,7 +22,7 @@ import (
 	"os"
 	"time"
 
-	fCli "github.com/fission/fission/pkg/fission-cli/cliwrapper/cli"
+	fCli "github.com/hanzoai/functions/pkg/fission-cli/cliwrapper/cli"
 )
 
 var _ fCli.Input = &Cli{}
