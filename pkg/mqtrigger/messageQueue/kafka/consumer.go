@@ -28,9 +28,9 @@ import (
 	"github.com/IBM/sarama"
 	"go.uber.org/zap"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	"github.com/fission/fission/pkg/mqtrigger"
-	"github.com/fission/fission/pkg/utils"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	"github.com/hanzoai/functions/pkg/mqtrigger"
+	"github.com/hanzoai/functions/pkg/utils"
 )
 
 type MqtConsumerGroupHandler struct {

@@ -28,7 +28,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
 )
 
 // getResources gets the resources(CPU, memory) set for the function

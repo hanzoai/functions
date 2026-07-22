@@ -39,7 +39,7 @@ func Environment(name, namespace string) *EnvironmentApplyConfiguration {
 	b.WithName(name)
 	b.WithNamespace(namespace)
 	b.WithKind("Environment")
-	b.WithAPIVersion("fission.io/v1")
+	b.WithAPIVersion("hanzo.ai/v1")
 	return b
 }
 

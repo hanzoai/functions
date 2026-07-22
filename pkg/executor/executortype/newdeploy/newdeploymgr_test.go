@@ -15,14 +15,14 @@ import (
 	"k8s.io/client-go/kubernetes/fake"
 	k8sCache "k8s.io/client-go/tools/cache"
 
-	fv1 "github.com/fission/fission/pkg/apis/core/v1"
-	fetcherConfig "github.com/fission/fission/pkg/fetcher/config"
-	fClient "github.com/fission/fission/pkg/generated/clientset/versioned/fake"
-	genInformer "github.com/fission/fission/pkg/generated/informers/externalversions"
-	"github.com/fission/fission/pkg/utils"
-	"github.com/fission/fission/pkg/utils/loggerfactory"
-	"github.com/fission/fission/pkg/utils/manager"
-	"github.com/fission/fission/pkg/utils/uuid"
+	fv1 "github.com/hanzoai/functions/pkg/apis/core/v1"
+	fetcherConfig "github.com/hanzoai/functions/pkg/fetcher/config"
+	fClient "github.com/hanzoai/functions/pkg/generated/clientset/versioned/fake"
+	genInformer "github.com/hanzoai/functions/pkg/generated/informers/externalversions"
+	"github.com/hanzoai/functions/pkg/utils"
+	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
+	"github.com/hanzoai/functions/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/utils/uuid"
 )
 
 const (

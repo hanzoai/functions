@@ -20,7 +20,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fission/fission/pkg/tracker"
+	"github.com/hanzoai/functions/pkg/tracker"
 )
 
 func eventCommandHandler(cmd *cobra.Command, args []string) error {

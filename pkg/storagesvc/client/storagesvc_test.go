@@ -33,9 +33,9 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/fission/fission/pkg/crd"
-	"github.com/fission/fission/pkg/storagesvc"
-	"github.com/fission/fission/pkg/utils/manager"
+	"github.com/hanzoai/functions/pkg/crd"
+	"github.com/hanzoai/functions/pkg/storagesvc"
+	"github.com/hanzoai/functions/pkg/utils/manager"
 )
 
 const (

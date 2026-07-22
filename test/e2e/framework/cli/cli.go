@@ -7,9 +7,9 @@ import (
 	"go.uber.org/zap"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/fission/fission/cmd/fission-cli/app"
-	"github.com/fission/fission/pkg/fission-cli/cmd"
-	"github.com/fission/fission/test/e2e/framework"
+	"github.com/hanzoai/functions/cmd/fission-cli/app"
+	"github.com/hanzoai/functions/pkg/fission-cli/cmd"
+	"github.com/hanzoai/functions/test/e2e/framework"
 )
 
 func ExecCommand(f *framework.Framework, ctx context.Context, args ...string) (string, error) {
