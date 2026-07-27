@@ -39,11 +39,20 @@ jobs:
       # sibling here is the smallest fix that does not change dependency
       # resolution; removing the replace in favour of a published version is a
       # repo-owner decision, not a CI one.
-      - uses: actions/checkout@v4
-        with:
-          repository: hanzoai/commerce
-          path: ../commerce
-          token: ${{ secrets.GH_PAT }}
+      # actions/checkout REFUSES a path outside the workspace
+      #   "Repository path '/workspace/hanzoai/commerce' is not under
+      #    '/workspace/hanzoai/functions'"
+      # so the sibling has to be cloned with plain git, which has no such rule.
+      - name: Provide the sibling commerce checkout go.mod requires
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          set -euo pipefail
+          rm -rf ../commerce
+          git clone --depth 1 --quiet \
+            "https://x-access-token:${GH_PAT}@github.com/hanzoai/commerce.git" ../commerce
+          test -d ../commerce/metering || { echo "::error::../commerce/metering missing after clone"; exit 1; }
+          echo "sibling ready: $(cd ../commerce && git rev-parse --short HEAD)"
 
       - id: meta
         run: echo "tag=sha-$(echo "$GITHUB_SHA" | cut -c1-7)" >> "$GITHUB_OUTPUT"
