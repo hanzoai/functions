@@ -31,6 +31,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # go.mod:337 carries a LOCAL replace:
+      #   replace github.com/hanzoai/commerce/metering => ../commerce/metering
+      # so this module cannot build unless a sibling commerce checkout exists.
+      # There is no vendor/ directory, and upstream's own release.yaml does a
+      # plain single checkout — meaning it fails the same way. Supplying the
+      # sibling here is the smallest fix that does not change dependency
+      # resolution; removing the replace in favour of a published version is a
+      # repo-owner decision, not a CI one.
+      - uses: actions/checkout@v4
+        with:
+          repository: hanzoai/commerce
+          path: ../commerce
+          token: ${{ secrets.GH_PAT }}
+
       - id: meta
         run: echo "tag=sha-$(echo "$GITHUB_SHA" | cut -c1-7)" >> "$GITHUB_OUTPUT"
 
