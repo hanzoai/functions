@@ -415,8 +415,11 @@ github.com/graymeta/stow v0.2.8 h1:fxN42iKy/bUg5nMR/2iWSc5+57hctCBbnFQ31PrYIOU=
 github.com/graymeta/stow v0.2.8/go.mod h1:JAs139Zr29qfsecy7b+h9DRsWXbFbsd7LCrbCDYI84k=
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.1 h1:e9Rjr40Z98/clHv5Yg79Is0NtosR5LXRvdr7o/6NwbA=
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.1/go.mod h1:tIxuGz/9mpox++sgp9fJjHO0+q1X9/UOWd798aAm22M=
+<<<<<<< HEAD
 github.com/hanzoai/account v0.2.0 h1:WxIut3YMz8JNdHerlRIqP1a+k3P79BIKM1mjfRFDG0Y=
 github.com/hanzoai/account v0.2.0/go.mod h1:8OzIGRphAhlabOI74O4GoL3RM0y8mbUV0pQUKgXLjkw=
+=======
+>>>>>>> origin/main
 github.com/hashicorp/consul/api v1.30.0 h1:ArHVMMILb1nQv8vZSGIwwQd2gtc+oSQZ6CalyiyH2XQ=
 github.com/hashicorp/consul/api v1.30.0/go.mod h1:B2uGchvaXVW2JhFoS8nqTxMD5PBykr4ebY4JWHTTeLM=
 github.com/hashicorp/consul/sdk v0.16.1 h1:V8TxTnImoPD5cj0U9Spl0TUxcytjcbbJeADFF07KdHg=
