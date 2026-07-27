@@ -62,6 +62,20 @@ jobs:
           go-version-file: go.mod
           cache: true
 
+      # The dependency graph reaches PRIVATE hanzoai modules — ../commerce/metering
+      # imports github.com/hanzoai/account, and `go mod download` then dies with
+      #   could not read Username for 'https://github.com': terminal prompts disabled
+      # GOPRIVATE keeps them off the proxy/sumdb; the insteadOf rewrite supplies
+      # the credential. Both are needed — either alone still fails.
+      - name: Authenticate Go to private hanzoai modules
+        run: |
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          set -euo pipefail
+          git config --global url."https://x-access-token:${GH_PAT}@github.com/".insteadOf "https://github.com/"
+          go env -w GOPRIVATE='github.com/hanzoai/*,github.com/luxfi/*'
+          go env -w GOFLAGS=-mod=mod
+
       # CGO off + static: the runtime image is chainguard/static, which has no libc.
       - name: Build fission-bundle
         run: |
