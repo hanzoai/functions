@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"go.opentelemetry.io/contrib/propagators/autoprop"
-	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 
 	"github.com/hanzoai/functions/pkg/utils/loggerfactory"
 )
@@ -65,7 +65,7 @@ func TestGetTraceExporter(t *testing.T) {
 	tests := []struct {
 		oltpEndpoint string
 		oltpInsecure string
-		wantExporter *otlptrace.Exporter
+		wantExporter sdktrace.SpanExporter
 		wantError    error
 	}{
 		{
