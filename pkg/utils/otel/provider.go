@@ -9,13 +9,11 @@ import (
 
 	"go.opentelemetry.io/contrib/propagators/autoprop"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
-	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+	luxtrace "github.com/luxfi/trace"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
 	"go.uber.org/zap"
-	"google.golang.org/grpc/credentials"
 	apiv1 "k8s.io/api/core/v1"
 )
 
@@ -43,7 +41,7 @@ func parseOtelConfig() OtelConfig {
 	return config
 }
 
-func getTraceExporter(ctx context.Context, logger *zap.Logger) (*otlptrace.Exporter, error) {
+func getTraceExporter(ctx context.Context, logger *zap.Logger) (sdktrace.SpanExporter, error) {
 	otelConfig := parseOtelConfig()
 	if otelConfig.endpoint == "" {
 		if logger != nil {
@@ -52,16 +50,10 @@ func getTraceExporter(ctx context.Context, logger *zap.Logger) (*otlptrace.Expor
 		return nil, nil
 	}
 
-	grpcOpts := []otlptracegrpc.Option{
-		otlptracegrpc.WithEndpoint(otelConfig.endpoint),
-	}
-	if otelConfig.insecure {
-		grpcOpts = append(grpcOpts, otlptracegrpc.WithInsecure())
-	} else {
-		grpcOpts = append(grpcOpts, otlptracegrpc.WithTLSCredentials(credentials.NewClientTLSFromCert(nil, "")))
-	}
-
-	exporter, err := otlptracegrpc.New(ctx, grpcOpts...)
+	exporter, err := luxtrace.NewZAPExporter(
+		luxtrace.ExporterConfig{Type: luxtrace.ZAP, Endpoint: otelConfig.endpoint, Insecure: otelConfig.insecure},
+		"functions", "",
+	)
 	if err != nil {
 		return nil, err
 	}
