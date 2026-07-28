@@ -55,7 +55,7 @@ fission env create --name $env --image $GO_RUNTIME_IMAGE --builder $GO_BUILDER_I
 timeout 90 bash -c "wait_for_builder $env"
 
 pkgName=$(generate_test_id)
-fission package create --name $pkgName --src hello.go --env $env
+fission package create --name $pkgName --src testdata/hello.go --env $env
 
 # wait for build to finish at most 90s
 timeout 90 bash -c "waitBuild $pkgName"
