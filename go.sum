@@ -738,6 +738,8 @@ github.com/gsterjov/go-libsecret v0.0.0-20161001094733-a6f4afe4910c/go.mod h1:NM
 github.com/hailocab/go-hostpool v0.0.0-20160125115350-e80d13ce29ed/go.mod h1:tMWxXQ9wFIaZeTI9F+hmhFiGpFmhOHzyShyFUhRm0H4=
 github.com/hanzoai/account v0.2.0 h1:WxIut3YMz8JNdHerlRIqP1a+k3P79BIKM1mjfRFDG0Y=
 github.com/hanzoai/account v0.2.0/go.mod h1:8OzIGRphAhlabOI74O4GoL3RM0y8mbUV0pQUKgXLjkw=
+github.com/hanzoai/commerce/metering v0.1.5 h1:COEwtC5ibC1JYKvgu1gEcAtT9ji6WD+jLNGlHnxRGjI=
+github.com/hanzoai/commerce/metering v0.1.5/go.mod h1:o5+kx0AugvAsrXN7felHVX7LZJ4X0WtDyZ8mpeUFS+s=
 github.com/hashicorp/consul/api v1.30.0 h1:ArHVMMILb1nQv8vZSGIwwQd2gtc+oSQZ6CalyiyH2XQ=
 github.com/hashicorp/consul/api v1.30.0/go.mod h1:B2uGchvaXVW2JhFoS8nqTxMD5PBykr4ebY4JWHTTeLM=
 github.com/hashicorp/consul/sdk v0.16.1 h1:V8TxTnImoPD5cj0U9Spl0TUxcytjcbbJeADFF07KdHg=

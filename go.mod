@@ -332,6 +332,4 @@ tool (
 // deps), so importing it adds no commerce server code or version churn here.
 // Pinned to the local checkout until hanzoai/commerce#41 merges + tags the
 // metering module; switch to a tagged version on merge.
-require github.com/hanzoai/commerce/metering v0.0.0-00010101000000-000000000000
-
-replace github.com/hanzoai/commerce/metering => ../commerce/metering
+require github.com/hanzoai/commerce/metering v0.1.5
