@@ -740,6 +740,8 @@ github.com/hanzoai/account v0.2.0 h1:WxIut3YMz8JNdHerlRIqP1a+k3P79BIKM1mjfRFDG0Y
 github.com/hanzoai/account v0.2.0/go.mod h1:8OzIGRphAhlabOI74O4GoL3RM0y8mbUV0pQUKgXLjkw=
 github.com/hanzoai/commerce/metering v0.1.5 h1:COEwtC5ibC1JYKvgu1gEcAtT9ji6WD+jLNGlHnxRGjI=
 github.com/hanzoai/commerce/metering v0.1.5/go.mod h1:o5+kx0AugvAsrXN7felHVX7LZJ4X0WtDyZ8mpeUFS+s=
+github.com/hanzoai/commerce/metering v0.1.6 h1:cL0Lw4vSm58ncjHHD1ad2+z63aDLms3xolk9yVUNxow=
+github.com/hanzoai/commerce/metering v0.1.6/go.mod h1:o5+kx0AugvAsrXN7felHVX7LZJ4X0WtDyZ8mpeUFS+s=
 github.com/hashicorp/consul/api v1.30.0 h1:ArHVMMILb1nQv8vZSGIwwQd2gtc+oSQZ6CalyiyH2XQ=
 github.com/hashicorp/consul/api v1.30.0/go.mod h1:B2uGchvaXVW2JhFoS8nqTxMD5PBykr4ebY4JWHTTeLM=
 github.com/hashicorp/consul/sdk v0.16.1 h1:V8TxTnImoPD5cj0U9Spl0TUxcytjcbbJeADFF07KdHg=
