@@ -2,7 +2,6 @@
 
 # Hanzo Functions
 
-Forked from [fission/fission](https://github.com/fission/fission) (Apache-2.0).
 
 Serverless compute platform for event-driven workloads with GPU support.
 
