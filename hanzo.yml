@@ -1,0 +1,22 @@
+# hanzoai/functions — the serverless-function control plane (Go, Fission fork:
+# controller, executor, router, CRDs).
+#
+# Gate only, no `images:`. Its many images are cut by the release lane
+# (goreleaser + skaffold); one artifact, one producer.
+#
+# COMPILE AND VET, NOT the repo's `make test-run`. That target runs
+# hack/runtests.sh, which provisions KUBEBUILDER_ASSETS via setup-envtest and
+# talks to a KUBECONFIG — it needs a cluster, and the repo's own push_pr.yaml
+# stands up kind before it can run. A gate that requires a cluster fails for the
+# absence of a cluster, which says nothing about the commit.
+#
+# `go build ./...` still compiles every controller, informer and generated CRD
+# client in the root module, and `go vet` catches what compiles but is wrong.
+# test/tests/websocket is its own module and is deliberately out of scope of
+# ./... — it is an end-to-end fixture, exercised by the kind lane.
+test:
+  - name: build-and-vet
+    run: |
+      set -e
+      go build ./...
+      go vet ./...
