@@ -1,9 +1,14 @@
 # functions — Hanzo FaaS plane
 
-Fission-based functions-as-a-service. Control plane is **live** on
-`do-sfo3-hanzo-k8s`, namespace `fission` (Helm release `fission`, chart
-`fission-all` v1.21.0, image `ghcr.io/hanzoai/functions:v1.21.1-amd64`).
-Python / Node / Rust runtimes are registered and invoking.
+Functions-as-a-service. **The live API is `/v1/functions` in `hanzoai/cloud`**
+(`apps/functions`) — registry, triggers, metrics and invoke, with invoke
+delegating to the sandboxed executor. This repo is the standalone control
+plane, and it is NOT deployed: the cluster install was removed on 2026-08-04
+(`universe` 798fac65) after serving zero invocations in 36 days, because the
+cloud plugin had been answering the same API the whole time. Two
+implementations of one product; this was the copy nobody called.
+
+Upstream attribution lives in `NOTICE` and nowhere else.
 
 `CLAUDE.md` and `AGENTS.md` are symlinks to this file — edit `LLM.md`, never
 the symlinks, and never commit them.
