@@ -26,8 +26,8 @@ import (
 	"time"
 
 	"github.com/dchest/uniuri"
-	"github.com/minio/minio-go/v7"
-	"github.com/minio/minio-go/v7/pkg/credentials"
+	"github.com/hanzos3/go"
+	"github.com/hanzos3/go/pkg/credentials"
 	"github.com/ory/dockertest/v3"
 	dc "github.com/ory/dockertest/v3/docker"
 	"go.uber.org/zap"
