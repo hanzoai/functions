@@ -1,6 +1,6 @@
 module github.com/hanzoai/functions
 
-go 1.26.5
+go 1.26.4
 
 require (
 	dario.cat/mergo v1.0.2
@@ -17,7 +17,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/mux v1.8.1
 	github.com/graymeta/stow v0.2.8
-	github.com/hanzos3/go v1.0.1
+	github.com/hanzos3/go v1.0.2
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/hashicorp/go-retryablehttp v0.7.7
 	github.com/influxdata/influxdb v1.12.0
