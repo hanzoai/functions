@@ -4,6 +4,6 @@
     "node": ">=7.6.0"
   },
   "dependencies": {
-    "moment": "*"
+    "moment": "^2.30.1"
   }
 }
