@@ -79,14 +79,6 @@ jobs:
           # All 5 luxfi modules here were verified present on proxy.golang.org.
           go env -w GOPRIVATE='github.com/hanzoai/*'
 
-      # CGO off + static: the runtime image is chainguard/static, which has no libc.
-      - name: Build fission-bundle
-        run: |
-          set -euo pipefail
-          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
-            go build -trimpath -ldflags="-s -w" -o fission-bundle ./cmd/fission-bundle
-          ls -l fission-bundle
-
       - uses: docker/setup-buildx-action@v3
         with: { driver: docker-container, driver-opts: network=host }
 
@@ -96,21 +88,64 @@ jobs:
           username: ${{ secrets.GHCR_USER }}
           password: ${{ secrets.GHCR_TOKEN }}
 
-      - uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: ./cmd/fission-bundle/Dockerfile
-          platforms: linux/amd64
-          push: true
-          provenance: false
-          tags: ghcr.io/hanzoai/functions:${{ steps.meta.outputs.tag }}
-
-      - name: Verify the pushed image resolves
+      # The lab runs amd64 (evo) and arm64 (spark), so all 8 fission pods need an
+      # image that carries both. ONE IMAGE PER ARCHITECTURE, because the binary is
+      # built out here and the Dockerfile is three lines that COPY it: handing
+      # buildx two platforms in one build would copy this same binary into both,
+      # and the arm64 image would pull on spark and die with `exec format error`.
+      # That is worse than the amd64-only image it replaces, because the pin looks
+      # satisfied and the pod does not start.
+      #
+      # Nothing is emulated and no binfmt is registered. Go cross-compiles for
+      # free with CGO off, and the packaging Dockerfile RUNs nothing — FROM and
+      # COPY are BuildKit's own work, never the target platform's — so both images
+      # are assembled natively on this amd64 pool.
+      #
+      # CGO off + static: the runtime image is chainguard/static, which has no libc.
+      - name: Build and push one image per architecture
         run: |
           set -euo pipefail
           img="ghcr.io/hanzoai/functions:${{ steps.meta.outputs.tag }}"
+          for arch in amd64 arm64; do
+            CGO_ENABLED=0 GOOS=linux GOARCH="$arch" \
+              go build -trimpath -ldflags="-s -w" -o fission-bundle ./cmd/fission-bundle
+            ls -l fission-bundle
+            docker buildx build . \
+              --file ./cmd/fission-bundle/Dockerfile \
+              --platform "linux/${arch}" \
+              --provenance=false \
+              --tag "${img}-${arch}" \
+              --push
+          done
+
+      # The release name is a manifest LIST over the two, assembled at the
+      # registry. It cannot be another --tag on the builds above: a local daemon
+      # holds one architecture, and only the registry can hold the pair.
+      - name: Join both architectures under the release tag
+        run: |
+          set -euo pipefail
+          img="ghcr.io/hanzoai/functions:${{ steps.meta.outputs.tag }}"
+          docker buildx imagetools create -t "$img" "${img}-amd64" "${img}-arm64"
+
+      # Counting the platforms is what makes multi-arch a fact rather than an
+      # intention: a list with one entry pulls fine on the arch that built it and
+      # ImagePullBackOffs on the other half of the fleet.
+      - name: Verify the pushed image resolves, carrying both architectures
+        run: |
+          set -euo pipefail
+          img="ghcr.io/hanzoai/functions:${{ steps.meta.outputs.tag }}"
+          ok=""
           for i in 1 2 3 4 5 6; do
-            docker buildx imagetools inspect "$img" >/dev/null 2>&1 && { echo "resolved $img"; exit 0; }
+            if docker buildx imagetools inspect "$img" >/dev/null 2>&1; then ok=1; break; fi
             sleep 5
           done
-          echo "::error::pushed image never resolved: $img"; exit 1
+          [ -n "$ok" ] || { echo "::error::pushed image never resolved: $img"; exit 1; }
+          got=$(docker buildx imagetools inspect "$img" \
+            --format '{{range .Manifest.Manifests}}{{.Platform.OS}}/{{.Platform.Architecture}} {{end}}')
+          echo "$img -> ${got}"
+          for want in linux/amd64 linux/arm64; do
+            case " $got " in
+              *" $want "*) ;;
+              *) echo "::error::$img does not carry $want"; exit 1 ;;
+            esac
+          done
