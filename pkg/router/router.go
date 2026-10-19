@@ -53,7 +53,6 @@ import (
 	"github.com/hanzoai/functions/pkg/crd"
 	eclient "github.com/hanzoai/functions/pkg/executor/client"
 	"github.com/hanzoai/functions/pkg/throttler"
-	"github.com/hanzoai/functions/pkg/usagemeter"
 	"github.com/hanzoai/functions/pkg/utils/httpserver"
 	"github.com/hanzoai/functions/pkg/utils/manager"
 	"github.com/hanzoai/functions/pkg/utils/metrics"
@@ -68,10 +67,6 @@ func router(ctx context.Context, logger *zap.Logger, mgr manager.Interface, http
 	var mr *mutableRouter
 	mux := mux.NewRouter()
 	mux.Use(metrics.HTTPMetricMiddleware)
-	// Meter function invocations to Hanzo commerce (balance gate + usage
-	// record). Env-gated: a transparent pass-through until COMMERCE_URL +
-	// COMMERCE_SERVICE_TOKEN are configured by the operator.
-	mux.Use(usagemeter.Middleware(logger))
 
 	// see issue https://github.com/hanzoai/functions/issues/1317
 	useEncodedPath, err := strconv.ParseBool(os.Getenv("USE_ENCODED_PATH"))

@@ -21,7 +21,7 @@ client ──HTTPS──> api.hanzo.ai (hanzoai/gateway)
                     │  injects X-Org-Id / X-User-Id / X-Request-Id
                     ▼
           /v1/functions/*  ──> router.fission.svc.cluster.local:80
-                    │            (Fission router; usagemeter gates + records)
+                    │            (Fission router)
                     ▼
           function pod (python|nodejs|rust env, scale-to-zero)
 ```
@@ -50,44 +50,14 @@ network — not a gateway concern.
 
 ## Billing / metering
 
-Wired in code already: `pkg/usagemeter` (router) calls the shared
-`github.com/hanzoai/commerce/metering` client. It is a transparent pass-through
-until the env below exists, so enabling billing is config, not code.
-
-Inject into the `router` deployment via Helm values (operator/KMS). Deliberately
-NOT in `universe/infra/k8s/functions/values.yaml`, because
-`COMMERCE_SERVICE_TOKEN` must come from KMS and never sit in a values file.
-
-| Env | Meaning | Source |
-|-----|---------|--------|
-| `COMMERCE_URL` | commerce base URL | default `http://commerce.hanzo.svc.cluster.local:8001` |
-| `COMMERCE_SERVICE_TOKEN` | admin-scoped S2S token | **KMS only** |
-| `COMMERCE_SERVICE_ORG` | fallback org slug | `hanzo` |
-| `FUNCTIONS_PRICE_PER_CALL_CENTS` | flat price per successful invocation | pricing decision |
-| `METERING_TIER_AWARE` | gate on prepaid + plan allotment | `true` recommended |
-| `METERING_FAIL_OPEN` | allow-on-error | leave unset ⇒ **fail-closed** |
-
-Behaviour:
-
-- **Identity** comes from gateway-minted `X-Org-Id`/`X-User-Id`; commerce user is
-  `"{org}/{sub}"`. The router never trusts a client header.
-- **Gate (pre-request)**: insufficient balance → `402
-  {"error":{"code":"insufficient_balance"}}`; balance unverifiable → `503`
-  (fail-closed). Same mapping as the gateway/LLM path.
-- **Record (post-request, async)**: success only (2xx–3xx). Failed invocations are
-  never charged. `/router-healthz` and `/metrics` are skipped.
-- **Provider label** is `functions`, so spend attributes per product.
-
-**GPU-seconds + margin** is not in v1 (flat per-call). Extending it means a
-`PriceFunc` change in `pkg/usagemeter`: the executor already knows wall-time and
-the env's GPU class, so `price = base + gpu_seconds × rate_for_class × margin`.
-Commerce already models `UsageMeterType` `gpu` / `api_calls` / `network_egress` —
-record GPU invocations under `gpu`, plain ones under `api_calls`. Resell margin
-follows the DO-resell model: `metered_cost = raw_cost × (1 + margin)`.
+None here. An invocation is paid for where it is served: `/v1/functions` in cloud
+(`apps/functions`), through cloud's one metering client, which refuses a call it
+cannot weigh. This plane's router meter (`pkg/usagemeter`, over commerce's copy of
+that client) was deleted with the copy; this plane serves no traffic.
 
 ## `/v1` surface
 
-Two planes. **Invoke** goes gateway→router and is billed. **Management** is
+Two planes. **Invoke** goes gateway→router. **Management** is
 k8s-CRD + storagesvc work belonging in a `functions` module in cloud (already the
 `/v1` backend), org-scoped by `X-Org-Id`.
 
@@ -98,7 +68,7 @@ k8s-CRD + storagesvc work belonging in a `functions` module in cloud (already th
 | `GET /v1/functions` | list (org-scoped) | Function CRs where `hanzo.ai/org={org}` |
 | `GET /v1/functions/{name}` | detail | Function + Trigger + status |
 | `DELETE /v1/functions/{name}` | delete | cascade Function+Package+Trigger |
-| `POST /v1/functions/{name}` | **invoke** | data-plane via gateway→router (billed) |
+| `POST /v1/functions/{name}` | **invoke** | data-plane via gateway→router |
 | `GET /v1/functions/{name}/logs` | logs | stream env-pod logs |
 | `GET /v1/functions/{name}/metrics` | usage | invocations / GPU-seconds from commerce |
 
@@ -121,7 +91,6 @@ the k8s boundary — the control plane already watches N namespaces via
 
 | Concern | Owner |
 |---------|-------|
-| Fission control plane, runtimes, `pkg/usagemeter` price formula, env images | this repo |
+| Fission control plane, runtimes, env images | this repo |
 | `/v1/functions` gateway route + identity injection | `gateway-config` |
-| `COMMERCE_SERVICE_TOKEN` (KMS), price config, commerce GPU meter | commerce |
 | `/v1/functions` management backend + console UI | cloud |
